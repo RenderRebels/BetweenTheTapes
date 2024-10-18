@@ -18,11 +18,11 @@ public class movement : MonoBehaviour
         {
             direction = Vector2.right;
         }
-        else if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             direction = Vector2.left;
         }
-        else if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             direction = Vector2.up + Vector2.up;
         }
