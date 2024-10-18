@@ -22,6 +22,10 @@ public class movement : MonoBehaviour
         {
             direction = Vector2.left;
         }
+        else if (Input.GetKey(KeyCode.Space))
+        {
+            direction = Vector2.up + Vector2.up;
+        }
         float dt = Time.deltaTime;
         float speed = 3.0f;
         Vector3 change = direction * speed * dt;
