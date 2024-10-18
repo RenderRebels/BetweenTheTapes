@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Between The Tapes.sln"
+    "dotnet.defaultSolution": "BetweenTheTapes.sln"
 }
