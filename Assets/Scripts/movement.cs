@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class movement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
+    //public float speed = 5.0f;
+    public float jumpForce = 10.0f;
+
+    private Rigidbody2D rBody;
+    public 
+
     void Start()
     {
-        
+        rBody = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         Vector2 direction = Vector2.zero;
@@ -27,8 +32,12 @@ public class movement : MonoBehaviour
             direction = Vector2.up + Vector2.up;
         }
         float dt = Time.deltaTime;
-        float speed = 3.0f;
+        float speed = 5.0f;
         Vector3 change = direction * speed * dt;
         transform.position = transform.position + change;
+       //rBody.AddForce(jumpForce);
     }
+  
+    
+
 }
