@@ -17,7 +17,7 @@ public class Movement1 : MonoBehaviour
 
     private void Update()
     {
-        rBody.velocity = joystickMovment * speed;
+        rBody.linearVelocity = joystickMovment * speed;
     }
     public void OnMove(InputAction.CallbackContext valueFromAction)
     {
