@@ -29,10 +29,10 @@ public class movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            direction = Vector2.up + Vector2.up;
+            direction = Vector2.up + Vector2.up + Vector2.up;
         }
         float dt = Time.deltaTime;
-        float speed = 5.0f;
+        float speed = 6.0f;
         Vector3 change = direction * speed * dt;
         transform.position = transform.position + change;
        //rBody.AddForce(jumpForce);
