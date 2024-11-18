@@ -6,7 +6,7 @@ public class slimemovment1 : MonoBehaviour
     BoxCollider2D collision2D;
     Vector2 direction = Vector2.right;
 
-    float speed = 2.5f;
+    float speed = 0.5f;
     float patrolrange = 5.0f;
     float startx;
 
@@ -15,8 +15,6 @@ public class slimemovment1 : MonoBehaviour
     {
         transform.position = Vector2.zero;
         float startx = transform.position.x;
-        float angle = 0.0f * Mathf.Deg2Rad;
-        direction = new Vector2 (Mathf.Cos (angle), Mathf.Sin (angle));
     }
 
     // Update is called once per frame

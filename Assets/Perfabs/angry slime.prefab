@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6081148310945979863}
   - component: {fileID: 2136442494227614831}
   - component: {fileID: 9208036491808433708}
+  - component: {fileID: -136672445859787217}
   m_Layer: 0
   m_Name: angry slime
   m_TagString: Untagged
@@ -153,3 +154,16 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00053504057, y: -0.0452377}
   m_Size: {x: 0.23892991, y: 0.14392485}
   m_Direction: 1
+--- !u!114 &-136672445859787217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7248717421404125441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6bcb0df79c60e4f9de9cb98696032f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
