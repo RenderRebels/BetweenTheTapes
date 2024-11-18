@@ -1,40 +1,37 @@
 using UnityEngine;
 
-public class slimemovment1 : MonoBehaviour
+public class Slimemovment1 : MonoBehaviour
 {
-    public GameObject player;
-    BoxCollider2D collision2D;
-    Vector2 direction = Vector2.right;
+    private float moveSpeed = 3f;
+    private Vector2 movementDirection = Vector2.right;
+    private Rigidbody2D rb;
 
-    float speed = 0.5f;
-    float patrolrange = 5.0f;
-    float startx;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        transform.position = Vector2.zero;
-        float startx = transform.position.x;
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        float leftlimit = startx - patrolrange;
-        float rightlimit = startx + patrolrange;
 
-        float dt = Time.deltaTime;
-        Vector3 change = direction * dt * speed;
-        transform.position += change;
+        Vector2 movement = movementDirection.normalized * moveSpeed;
+        rb.linearVelocity = movement;
+    }
 
-        if (transform.position.x >= rightlimit)
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.name == "ground")
         {
-            direction.x = - direction.x;
-        }
-        if (transform.position.x <= leftlimit)
-        {
-            direction.x = - direction.x;
+
+            movementDirection = (movementDirection == Vector2.right) ? Vector2.left : Vector2.right;
         }
 
+
+        if (collision.gameObject.name == "AngrySlime")
+        {
+
+            movementDirection = (movementDirection == Vector2.right) ? Vector2.left : Vector2.right;
+        }
     }
 }
