@@ -25645,21 +25645,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8662115073200294839, guid: 55c861c5adc68b54a8b0f621d97ea6de, type: 3}
-      propertyPath: groundDectection
-      value: 
-      objectReference: {fileID: 514463875}
     - target: {fileID: 7248717421404125441, guid: 55c861c5adc68b54a8b0f621d97ea6de, type: 3}
       propertyPath: m_Name
       value: angry slime
       objectReference: {fileID: 0}
     - target: {fileID: 9070402728402672790, guid: 55c861c5adc68b54a8b0f621d97ea6de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 38.3
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 9070402728402672790, guid: 55c861c5adc68b54a8b0f621d97ea6de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.02
+      value: -1.99
       objectReference: {fileID: 0}
     - target: {fileID: 9070402728402672790, guid: 55c861c5adc68b54a8b0f621d97ea6de, type: 3}
       propertyPath: m_LocalPosition.z
