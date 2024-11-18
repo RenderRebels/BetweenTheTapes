@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 469670138}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 864033157}
   m_Layer: 0
   m_Name: ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25290,6 +25290,24 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &1021355736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7248717421404125441, guid: 55c861c5adc68b54a8b0f621d97ea6de, type: 3}
+  m_PrefabInstance: {fileID: 3933052243060321678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1021355742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021355736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6bcb0df79c60e4f9de9cb98696032f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1817737377}
 --- !u!1 &1131614714
 GameObject:
   m_ObjectHideFlags: 0
@@ -25485,6 +25503,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1817737377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6479870290090860709, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
+  m_PrefabInstance: {fileID: 126311401511998511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2006907595
 GameObject:
   m_ObjectHideFlags: 3
@@ -25645,6 +25668,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8662115073200294839, guid: 55c861c5adc68b54a8b0f621d97ea6de, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7248717421404125441, guid: 55c861c5adc68b54a8b0f621d97ea6de, type: 3}
       propertyPath: m_Name
       value: angry slime
@@ -25692,7 +25719,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7248717421404125441, guid: 55c861c5adc68b54a8b0f621d97ea6de, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1021355742}
   m_SourcePrefab: {fileID: 100100000, guid: 55c861c5adc68b54a8b0f621d97ea6de, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
