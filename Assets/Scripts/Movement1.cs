@@ -17,7 +17,7 @@ public class Movement1 : MonoBehaviour
 
     private void Update()
     {
-        rBody.linearVelocity = joystickMovment * speed;
+        rBody.linearVelocityX = joystickMovment.x * speed;
     }
     public void OnMove(InputAction.CallbackContext valueFromAction)
     {
@@ -27,7 +27,7 @@ public class Movement1 : MonoBehaviour
     public void OnJump(InputAction.CallbackContext ctx)
     {
 
-        //rBody.AddForce(jumpForce, ForceMode2D.Impulse);
+        rBody.AddForceY(jumpForce, ForceMode2D.Impulse);
     }
    
 }
