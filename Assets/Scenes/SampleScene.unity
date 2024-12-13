@@ -633,6 +633,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
   m_PrefabInstance: {fileID: 126311401511998511}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &820887519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820887502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e38ba05e68a49429aae5d5b6258dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _minHealth: 0
+  _currrentHealth: 50
 --- !u!1 &1228145543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,6 +1165,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6479870290090860709, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 820887513}
+    - targetCorrespondingSourceObject: {fileID: 6479870290090860709, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 820887519}
   m_SourcePrefab: {fileID: 100100000, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
 --- !u!50 &623537142403692475
 Rigidbody2D:
@@ -31070,6 +31088,7 @@ GameObject:
   - component: {fileID: 623537142403692475}
   - component: {fileID: 7694559375760039416}
   - component: {fileID: 7717874233010222587}
+  - component: {fileID: 8185726139570651862}
   m_Layer: 0
   m_Name: angry slime
   m_TagString: Untagged
@@ -31077,6 +31096,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8185726139570651862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185726139570651861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e38ba05e68a49429aae5d5b6258dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 15
+  _minHealth: 0
+  _currrentHealth: 10
 --- !u!4 &8584595199184141456
 Transform:
   m_ObjectHideFlags: 0
