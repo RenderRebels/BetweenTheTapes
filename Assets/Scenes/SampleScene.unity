@@ -418,7 +418,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45, y: 3, z: -10}
+  m_LocalPosition: {x: 10, y: 15, z: -10}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -997,7 +997,7 @@ Transform:
   m_GameObject: {fileID: 1389860339}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -45, y: 3, z: -10}
+  m_LocalPosition: {x: 10, y: 15, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1362,11 +1362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1374,23 +1374,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999123
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.013241418
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 1.517
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -31278,7 +31278,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8185726139570651861}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb6bcb0df79c60e4f9de9cb98696032f, type: 3}
   m_Name: 
@@ -31334,6 +31334,7 @@ GameObject:
   - component: {fileID: 623537142403692475}
   - component: {fileID: 7694559375760039416}
   - component: {fileID: 7717874233010222587}
+  - component: {fileID: 8185726139570651862}
   m_Layer: 0
   m_Name: angry slime
   m_TagString: Untagged
@@ -31341,6 +31342,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8185726139570651862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185726139570651861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0ef07a359be34428867e9bc9aac6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  player: {fileID: 820887518}
+  detectionRange: 11.98
 --- !u!4 &8584595199184141456
 Transform:
   m_ObjectHideFlags: 0
