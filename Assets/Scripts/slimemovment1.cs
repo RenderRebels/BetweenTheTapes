@@ -15,7 +15,7 @@ public class Slimemovment1 : MonoBehaviour
     {
 
         Vector2 movement = movementDirection.normalized * moveSpeed;
-        rb.linearVelocity = movement;
+        rb.velocity = movement;
     }
 
     void OnCollisionEnter2D(Collision2D collision)

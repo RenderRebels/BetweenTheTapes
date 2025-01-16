@@ -24,7 +24,7 @@ public class Climb : MonoBehaviour
         if (isClimbing)
         {
             rb.gravityScale = 0f;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, vertical * speed);
+            rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
         }
         else
         {
