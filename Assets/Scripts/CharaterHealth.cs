@@ -4,12 +4,7 @@ public class CharaterHealth : MonoBehaviour
 {
     GameObject Player;
 
-    float[] numbers = { 0f, 1f, 2f, 3f, 4f, 5f };
-
-    void Start()
-    {
-
-    }
+    //float[] numbers = { 0f, 1f, 2f, 3f, 4f, 5f };
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,16 +17,9 @@ public class CharaterHealth : MonoBehaviour
         {
             Debug.Log("health" + currentHealth);
         }
-        if (currentHealth <= minHealth);
+        if (currentHealth <= minHealth)
         {
             Destroy(Player);
         }
-    }
-
-    void Update()
-    {
-        //if player ridgid body collides with enemy ridgid body, player takes dam and losses a heart
-
-        //if player health is down to zero player dies
     }
 }
