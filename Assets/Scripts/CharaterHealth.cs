@@ -7,10 +7,15 @@ public class CharaterHealth : MonoBehaviour
     float[] numbers = { 0f, 1f, 2f, 3f, 4f, 5f };
     float maxHealth = 5f;
     float minHealth = 0f;
-    float currenthealth = 5f;
+    float currentHealth = 5f;
+    float damage = -1f;
 
     void Start()
     {
+        //float maxHealth = 5f;
+        //float minHealth = 0f;
+        //float currentHealth = 5f;
+        //float damage = -1f;
 
     }
 
@@ -18,10 +23,7 @@ public class CharaterHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            if ()
-            {
-                
-            }
+            Debug.Log("health"  );
         }
     }
 
