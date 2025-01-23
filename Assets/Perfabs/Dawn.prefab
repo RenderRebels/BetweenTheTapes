@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 5887249616528480763}
   - component: {fileID: 2912085482868046182}
   - component: {fileID: 2030075102873661498}
+  - component: {fileID: 8286463902730516966}
   m_Layer: 0
   m_Name: Dawn
   m_TagString: Player
@@ -137,7 +138,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!50 &5887249616528480763
 Rigidbody2D:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -148,8 +149,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
   m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -221,3 +222,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0077142715, y: 0}
   m_Size: {x: 0.29999924, y: 0.48}
   m_Direction: 0
+--- !u!114 &8286463902730516966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6479870290090860709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbea6a31e716b264db826188c1aaa284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
