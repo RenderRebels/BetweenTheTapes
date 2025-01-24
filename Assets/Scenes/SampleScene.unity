@@ -1565,7 +1565,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2922501065665355172}
-  - {fileID: 7557497169153599298}
   - {fileID: 1950001420}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31267,11 +31266,11 @@ Transform:
   m_GameObject: {fileID: 8185726139570651861}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37.95, y: 8.21, z: -0.0016366565}
+  m_LocalPosition: {x: 17.334164, y: 11.351599, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2645225412595534037}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!70 &7694559375760039416
 CapsuleCollider2D:
@@ -31376,7 +31375,7 @@ GameObject:
   - component: {fileID: 8185726139570651862}
   m_Layer: 0
   m_Name: angry slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61141,3 +61140,4 @@ SceneRoots:
   - {fileID: 1937191775}
   - {fileID: 1483205838}
   - {fileID: 1476721408}
+  - {fileID: 7557497169153599298}
