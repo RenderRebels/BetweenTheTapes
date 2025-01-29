@@ -33626,11 +33626,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8185726139570651861}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb6bcb0df79c60e4f9de9cb98696032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
+  movementDirection: {x: 1, y: 0}
+  rb: {fileID: 0}
 --- !u!19719996 &7771444626208719804
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -33683,6 +33686,7 @@ GameObject:
   - component: {fileID: 7694559375760039416}
   - component: {fileID: 7717874233010222587}
   - component: {fileID: 8185726139570651862}
+  - component: {fileID: 8185726139570651863}
   m_Layer: 0
   m_Name: angry slime
   m_TagString: Enemy
@@ -33705,6 +33709,23 @@ MonoBehaviour:
   moveSpeed: 2
   player: {fileID: 820887518}
   detectionRange: 11.98
+--- !u!114 &8185726139570651863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185726139570651861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0b64f7ae4dad94995678bf4c46d6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  pointA: {fileID: 0}
+  pointB: {fileID: 0}
+  chaseDistance: 5
+  moveSpeed: 2
 --- !u!4 &8584595199184141456
 Transform:
   m_ObjectHideFlags: 0
