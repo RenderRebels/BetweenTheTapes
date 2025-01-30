@@ -5,43 +5,58 @@ using UnityEngine.InputSystem;
 
 public class Movement1 : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public float jumpForce = 10.0f;
+    float horizontalInput;
+    float moveSpeed = 5f;
+    bool isFacingRight = false;
+    float jumpPower = 10.0f;
+    bool isGrounded = false;
 
-    private Vector2 joystickMovement;
-    private Rigidbody2D rBody;
-    private bool isGrounded = true;
+    Rigidbody2D rb;
+    Animator animator;
 
+    // Start is called before the first frame update
     void Start()
     {
-        rBody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
-    [System.Obsolete]
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
-        rBody.velocity = new Vector2(joystickMovement.x * speed, rBody.velocity.y);
-    }
+        horizontalInput = Input.GetAxis("Horizontal");
 
-    public void OnMove(InputAction.CallbackContext valueFromAction)
-    {
-        joystickMovement = valueFromAction.ReadValue<Vector2>();
-    }
+        FlipSprite();
 
-    public void OnJump(InputAction.CallbackContext ctx)
-    {
-        if (ctx.performed && isGrounded)
+        if(Input.GetButtonDown("Jump") && isGrounded)
         {
-            rBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             isGrounded = false;
+            animator.SetBool("isJumping", !isGrounded);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void FixedUpdate()
     {
-        if (collision.contacts[0].normal.y > 0.5f)
+        rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
+        animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+        animator.SetFloat("yVelocity", rb.velocity.y);
+    }
+
+    void FlipSprite()
+    {
+        if(isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
         {
-            isGrounded = true;
+            isFacingRight = !isFacingRight;
+            Vector3 ls = transform.localScale;
+            ls.x *= -1f;
+            transform.localScale = ls;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        isGrounded = true;
+        animator.SetBool("isJumping", !isGrounded);
     }
 }
