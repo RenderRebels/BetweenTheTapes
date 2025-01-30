@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CharaterHealth : MonoBehaviour
+public class CharacterHealth : MonoBehaviour
 {
     const int maxHealth = 5;
     const int minHealth = 0;
@@ -12,12 +13,17 @@ public class CharaterHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             currentHealth -= damage;
-            Debug.Log("health" + currentHealth);
+            Debug.Log("Health: " + currentHealth);
         }
 
         if (currentHealth <= minHealth)
         {
-            Destroy(gameObject);
+            RestartScene();
         }
+    }
+
+    void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
