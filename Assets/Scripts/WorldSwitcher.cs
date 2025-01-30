@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class WorldSwitcher : MonoBehaviour
 {
-    // Assign the world parent objects in the Unity Inspector
     public GameObject world1;
     public GameObject world2;
 
-    // Tracks the currently active world
     private bool isWorld1Active = true;
+    private AudioSource audioSource;
+
+    public AudioClip switchSound; // Assign in the Inspector
 
     void Start()
     {
+        // Get the AudioSource component
+        audioSource = GetComponent<AudioSource>();
+
         // Ensure one world is active and the other is inactive at the start
         if (world1 != null && world2 != null)
         {
@@ -25,7 +29,6 @@ public class WorldSwitcher : MonoBehaviour
 
     void Update()
     {
-        // Check if the E key is pressed
         if (Input.GetKeyDown(KeyCode.E))
         {
             SwitchWorld();
@@ -41,6 +44,16 @@ public class WorldSwitcher : MonoBehaviour
             // Toggle the worlds
             world1.SetActive(isWorld1Active);
             world2.SetActive(!isWorld1Active);
+
+            // Play sound effect when switching
+            if (switchSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(switchSound);
+            }
+            else
+            {
+                Debug.LogError("No AudioClip assigned or AudioSource missing!");
+            }
 
             Debug.Log(isWorld1Active ? "Switched to World 1" : "Switched to World 2");
         }
