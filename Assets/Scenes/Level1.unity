@@ -3024,6 +3024,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1741416491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741416492}
+  m_Layer: 0
+  m_Name: Patrol1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1741416492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741416491}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 10, z: 0.045751657}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1804455122
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,6 +3460,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1913812134}
   m_CullTransparentMesh: 1
+--- !u!1 &1926497554
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926497555}
+  m_Layer: 0
+  m_Name: Patrol2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1926497555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926497554}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 23, y: 10, z: 0.045751657}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1937191771
 GameObject:
   m_ObjectHideFlags: 0
@@ -33631,9 +33693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6bcb0df79c60e4f9de9cb98696032f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  movementDirection: {x: 1, y: 0}
-  rb: {fileID: 0}
 --- !u!19719996 &7771444626208719804
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -33701,14 +33760,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8185726139570651861}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a0ef07a359be34428867e9bc9aac6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
   player: {fileID: 820887518}
-  detectionRange: 11.98
+  detectionRange: 15
 --- !u!114 &8185726139570651863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33721,11 +33780,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0b64f7ae4dad94995678bf4c46d6f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  pointA: {fileID: 0}
-  pointB: {fileID: 0}
-  chaseDistance: 5
-  moveSpeed: 2
+  player: {fileID: 820887518}
+  pointA: {fileID: 1741416492}
+  pointB: {fileID: 1926497555}
+  chaseDistance: 20
+  moveSpeed: 5
 --- !u!4 &8584595199184141456
 Transform:
   m_ObjectHideFlags: 0
@@ -63471,3 +63530,5 @@ SceneRoots:
   - {fileID: 1250552633}
   - {fileID: 1663719519}
   - {fileID: 83352995}
+  - {fileID: 1741416492}
+  - {fileID: 1926497555}
