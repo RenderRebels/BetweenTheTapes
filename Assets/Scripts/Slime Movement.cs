@@ -7,8 +7,10 @@ public class SlimeMovement : MonoBehaviour
     public Transform pointB;
     public float chaseDistance = 5.0f;
     public float moveSpeed = 2.0f;
+    public AudioSource chaseSound; // Reference to the AudioSource
 
     private Vector3 targetPoint;
+    private bool isChasing = false;
 
     void Start()
     {
@@ -18,13 +20,29 @@ public class SlimeMovement : MonoBehaviour
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        
+
         if (distanceToPlayer < chaseDistance)
         {
+            if (!isChasing)
+            {
+                isChasing = true;
+                if (chaseSound && !chaseSound.isPlaying)
+                {
+                    chaseSound.Play();
+                }
+            }
             ChasePlayer();
         }
         else
         {
+            if (isChasing)
+            {
+                isChasing = false;
+                if (chaseSound && chaseSound.isPlaying)
+                {
+                    chaseSound.Stop();
+                }
+            }
             Patrol();
         }
     }
