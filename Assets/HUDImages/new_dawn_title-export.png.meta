@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ccb131b97a7ddfa4fa8fec8e986fb6f8
+guid: 9ce2279096ee1494da9d17ce1df2e2d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4649193273016713102
-    second: title_screen_0
+      213: -102119922960778356
+    second: new_dawn_title-export_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: title_screen_0
+      name: new_dawn_title-export_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 27004b5c95fba7fb0800000000000000
-      internalID: -4649193273016713102
+      spriteID: c8bbe6b9872359ef0800000000000000
+      internalID: -102119922960778356
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      title_screen_0: -4649193273016713102
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
