@@ -5,9 +5,9 @@ public class LevelCompleteTrigger : MonoBehaviour
 {
     public GameObject levelCompleteUI;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player")) 
+        if (collision.CompareTag("Player"))
         {
             levelCompleteUI.SetActive(true);
             Time.timeScale = 0f;
