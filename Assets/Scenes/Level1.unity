@@ -568,7 +568,7 @@ Transform:
   m_GameObject: {fileID: 138284606}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000013969839, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -120, y: 8, z: -57.16}
+  m_LocalPosition: {x: -120, y: 8, z: -8}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52585,7 +52585,7 @@ Transform:
   m_GameObject: {fileID: 1389860339}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000013969839, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -120, y: 8, z: -57.16}
+  m_LocalPosition: {x: -120, y: 8, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52603,9 +52603,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FollowOffset: {x: 0, y: 0, z: -57.16}
+  FollowOffset: {x: 0, y: 0, z: -8}
   TrackerSettings:
-    BindingMode: 5
+    BindingMode: 4
     PositionDamping: {x: 0.1, y: 1, z: 1}
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
