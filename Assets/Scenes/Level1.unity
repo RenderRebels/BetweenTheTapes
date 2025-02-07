@@ -568,7 +568,7 @@ Transform:
   m_GameObject: {fileID: 138284606}
   serializedVersion: 2
   m_LocalRotation: {x: 0.013241418, y: 0, z: 0, w: 0.9999123}
-  m_LocalPosition: {x: 72.99, y: 7.89, z: -3.02}
+  m_LocalPosition: {x: -121.1, y: 9.8, z: -3}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2932,7 +2932,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.0297623
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -52511,7 +52511,7 @@ Transform:
   m_GameObject: {fileID: 1389860339}
   serializedVersion: 2
   m_LocalRotation: {x: 0.013241418, y: -0, z: -0, w: 0.9999123}
-  m_LocalPosition: {x: 72.99, y: 7.89, z: -3.02}
+  m_LocalPosition: {x: -121.1, y: 9.8, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54855,15 +54855,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 72.99
+      value: -121.1
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.89
+      value: 6.8
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7728685042911443570, guid: d77e45a1c51f9fe4bb26671ecaad598b, type: 3}
       propertyPath: m_LocalRotation.w
