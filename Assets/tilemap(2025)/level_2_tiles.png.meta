@@ -484,7 +484,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      level_2_tiles_0: -6296792875779251301
+      level_2_tiles_1: -8583194040387296763
+      level_2_tiles_10: -4932813454285449547
+      level_2_tiles_11: 268069890677269617
+      level_2_tiles_12: 2203081682591991391
+      level_2_tiles_13: -5538787913318935313
+      level_2_tiles_14: 9160283335448810687
+      level_2_tiles_2: -4377414916229719142
+      level_2_tiles_3: 2773702605719661412
+      level_2_tiles_4: 6130579103260583846
+      level_2_tiles_5: -1524204713293209430
+      level_2_tiles_6: -7395403128098355416
+      level_2_tiles_7: -4977955498665612515
+      level_2_tiles_8: -1545079756815878366
+      level_2_tiles_9: 3086103275381079960
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

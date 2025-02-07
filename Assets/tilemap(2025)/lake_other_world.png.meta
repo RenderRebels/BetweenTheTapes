@@ -484,7 +484,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lake_other_world_0: 2843015587817444615
+      lake_other_world_1: -7699638666152719411
+      lake_other_world_10: -4299637044604624381
+      lake_other_world_11: 6416979084292938224
+      lake_other_world_12: -1829132624997453411
+      lake_other_world_13: -7912256142274946284
+      lake_other_world_14: 1263711570017736165
+      lake_other_world_2: 1734388742568111334
+      lake_other_world_3: 3258548934119550521
+      lake_other_world_4: -3721262591869395037
+      lake_other_world_5: -7416811253329350387
+      lake_other_world_6: -2433134435018333347
+      lake_other_world_7: -5203741003055047262
+      lake_other_world_8: 2305009876961062639
+      lake_other_world_9: -6848284184376028059
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

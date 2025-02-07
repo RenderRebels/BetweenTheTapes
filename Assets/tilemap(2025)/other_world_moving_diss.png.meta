@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      other_world_moving_diss_0: 3231498722234204714
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

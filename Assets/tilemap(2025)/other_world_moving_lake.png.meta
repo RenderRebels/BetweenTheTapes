@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      other_world_moving_lake_0: 7787394641214097768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
