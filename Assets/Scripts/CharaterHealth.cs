@@ -12,6 +12,10 @@ public class CharacterHealth : MonoBehaviour
     public Image healthHUD; // UI Image that displays the health
     public Sprite[] healthSprites; // Array of sprites for different health levels
 
+    public AudioSource audioSource; // Audio source to play sounds
+    public AudioClip damageSound; // Sound effect for taking damage
+    public AudioClip deathSound; // Sound effect for reaching 0 health
+
     void Start()
     {
         UpdateHealthHUD();
@@ -25,11 +29,16 @@ public class CharacterHealth : MonoBehaviour
             currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
             Debug.Log("Health: " + currentHealth);
             UpdateHealthHUD();
-        }
 
-        if (currentHealth <= minHealth)
-        {
-            RestartScene();
+            if (currentHealth <= minHealth)
+            {
+                PlayDeathSound();
+                Invoke("RestartScene", 1f); // Delay restart for dramatic effect
+            }
+            else
+            {
+                PlayDamageSound();
+            }
         }
     }
 
@@ -44,6 +53,22 @@ public class CharacterHealth : MonoBehaviour
         {
             int spriteIndex = Mathf.Clamp(currentHealth - 1, 0, healthSprites.Length - 1);
             healthHUD.sprite = healthSprites[spriteIndex];
+        }
+    }
+
+    void PlayDamageSound()
+    {
+        if (audioSource != null && damageSound != null)
+        {
+            audioSource.PlayOneShot(damageSound);
+        }
+    }
+
+    void PlayDeathSound()
+    {
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound);
         }
     }
 }
