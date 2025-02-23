@@ -6,13 +6,13 @@ public class HandAI : MonoBehaviour
     public float moveSpeed = 2f;
 
     [Header("Detection Settings")]
-    public Transform player; 
+    public Transform player;
+    public Transform startPosition;
     public float detectionRange = 5f; 
 
     private Rigidbody2D rb;
     private Vector2 movement;
     private bool isPlayerInRange = false;
-    private bool movingLeft = true; 
 
     void Start()
     {
@@ -33,6 +33,10 @@ public class HandAI : MonoBehaviour
         {
             MoveTowardsPlayer();
         }
+        else
+        {
+            
+        }
     }
 
     private void TrackPlayer()
@@ -46,19 +50,12 @@ public class HandAI : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void StartPosition(Transform transform)
     {
-        foreach (ContactPoint2D contact in collision.contacts)
-        {
-        
-            if (Mathf.Abs(contact.normal.x) > 0.5f)
-            {
-                movingLeft = !movingLeft; 
-                break;
-            }
-        }
+        Vector2 position = transform.position;
+        startPosition = transform;
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
