@@ -49327,7 +49327,7 @@ PrefabInstance:
     - target: {fileID: 2334044670603305471, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: healthHUD
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1544656923}
     - target: {fileID: 6010181681432847445, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_LocalPosition.x
       value: -120.18
