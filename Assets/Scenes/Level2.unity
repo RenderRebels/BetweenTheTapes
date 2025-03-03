@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 198767384}
   - component: {fileID: 198767383}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Boss platform break
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48631,7 +48631,7 @@ Transform:
   m_GameObject: {fileID: 565395469}
   serializedVersion: 2
   m_LocalRotation: {x: 0.013241418, y: 0, z: 0, w: 0.9999123}
-  m_LocalPosition: {x: -115.9, y: 8.1, z: -10}
+  m_LocalPosition: {x: -88.31, y: 8.1, z: -10}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49341,7 +49341,7 @@ PrefabInstance:
       objectReference: {fileID: 1544656923}
     - target: {fileID: 6010181681432847445, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -115.9
+      value: -88.31
       objectReference: {fileID: 0}
     - target: {fileID: 6010181681432847445, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_LocalPosition.y
@@ -98259,11 +98259,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 51dbfe5811430bf419c0b556b7fcea6f, type: 3}
-  m_Resource: {fileID: 8300000, guid: 51dbfe5811430bf419c0b556b7fcea6f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4a26b1848324247489992aba7412e3d6, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4a26b1848324247489992aba7412e3d6, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
-  m_Pitch: 1
+  m_Pitch: 1.1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -99189,6 +99189,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 38038150}
+    - target: {fileID: 4022049277410912632, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
+      propertyPath: moveOnContact
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4562118559344165621, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: m_Name
       value: MovingPlatform (1)
@@ -99387,17 +99391,25 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 1996245358}
+    - target: {fileID: 4022049277410912632, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
+      propertyPath: moveOnContact
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4022049277410912632, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
+      propertyPath: stopAtBPosition
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4562118559344165621, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: m_Name
       value: MovingPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 5662567491948806601, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -64.56657
+      value: -63.77
       objectReference: {fileID: 0}
     - target: {fileID: 5662567491948806601, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5
+      value: 6.29
       objectReference: {fileID: 0}
     - target: {fileID: 5662567491948806601, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: m_LocalPosition.z
@@ -99454,6 +99466,7 @@ SceneRoots:
   - {fileID: 1537105847}
   - {fileID: 636900687}
   - {fileID: 245262764}
+  - {fileID: 198767382}
   - {fileID: 1312848990}
   - {fileID: 1294237225}
   - {fileID: 1186164429}
@@ -99461,4 +99474,3 @@ SceneRoots:
   - {fileID: 565395473}
   - {fileID: 1164076139}
   - {fileID: 1296952138}
-  - {fileID: 198767382}
