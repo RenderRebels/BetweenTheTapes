@@ -10,7 +10,7 @@ public class Movement1 : MonoBehaviour
 
     private Vector2 joystickMovement;
     private Rigidbody2D rb;
-    private bool isFacingRight = true; 
+    private bool isFacingRight = true;
     private bool isGrounded = false;
     private Animator animator;
 
@@ -19,7 +19,7 @@ public class Movement1 : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
-    
+
 
     private void Update()
     {
@@ -37,27 +37,27 @@ public class Movement1 : MonoBehaviour
     {
         if (ctx.performed && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce); 
-            isGrounded = false; 
-            animator.SetBool("isJumping", true); 
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            isGrounded = false;
+            animator.SetBool("isJumping", true);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.contacts[0].normal.y > 0.5f) 
+        if (collision.contacts[0].normal.y > 0.5f)
         {
             isGrounded = true;
-            animator.SetBool("isJumping", false); 
+            animator.SetBool("isJumping", false);
         }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(joystickMovement.x * speed, rb.velocity.y); 
+        rb.velocity = new Vector2(joystickMovement.x * speed, rb.velocity.y);
     }
 
-   
+
     void FlipSprite()
     {
         if (isFacingRight && joystickMovement.x < 0f || !isFacingRight && joystickMovement.x > 0f)
@@ -69,10 +69,10 @@ public class Movement1 : MonoBehaviour
         }
     }
 
-   
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         isGrounded = true;
-        animator.SetBool("isJumping", false); 
+        animator.SetBool("isJumping", false);
     }
 }

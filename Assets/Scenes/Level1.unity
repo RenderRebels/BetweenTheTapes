@@ -147498,8 +147498,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1495713133}
     - target: {fileID: 2595758870670814749, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
+      propertyPath: m_Size.x
+      value: 0.58862686
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595758870670814749, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_Size.y
-      value: 0.922037
+      value: 0.9220375
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595758870670814749, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.020727158
       objectReference: {fileID: 0}
     - target: {fileID: 2595758870670814749, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_Offset.y
@@ -147549,6 +147557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dawn
       objectReference: {fileID: 0}
+    - target: {fileID: 7609407894655403996, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: a76f987e979331c4c829fb4350aea0f2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
