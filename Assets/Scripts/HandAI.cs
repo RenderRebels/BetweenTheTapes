@@ -33,10 +33,6 @@ public class HandAI : MonoBehaviour
         {
             MoveTowardsPlayer();
         }
-        else
-        {
-            
-        }
     }
 
     private void TrackPlayer()
