@@ -310,8 +310,8 @@ GameObject:
   - component: {fileID: 58679424}
   - component: {fileID: 58679423}
   - component: {fileID: 58679426}
-  - component: {fileID: 58679425}
   - component: {fileID: 58679427}
+  - component: {fileID: 58679425}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  player: {fileID: 0}
+  player: {fileID: 1010925638}
   startPosition: {fileID: 0}
   detectionRange: 5
 --- !u!50 &58679426
@@ -597,7 +597,7 @@ Transform:
   m_GameObject: {fileID: 101038741}
   serializedVersion: 2
   m_LocalRotation: {x: 0.013241418, y: 0, z: 0, w: 0.9999123}
-  m_LocalPosition: {x: 20.91, y: 22.17, z: -9.63}
+  m_LocalPosition: {x: -137.06, y: 17.04, z: -9.77}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2476,15 +2476,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6010181681432847445, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.91
+      value: -137.06
       objectReference: {fileID: 0}
     - target: {fileID: 6010181681432847445, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.17
+      value: 16.04
       objectReference: {fileID: 0}
     - target: {fileID: 6010181681432847445, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.37
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 6010181681432847445, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_LocalRotation.w
@@ -53107,6 +53107,7 @@ GameObject:
   - component: {fileID: 2087514797}
   - component: {fileID: 2087514799}
   - component: {fileID: 2087514800}
+  - component: {fileID: 2087514801}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -53257,6 +53258,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.5001554, y: 3.4015424}
   m_EdgeRadius: 0
+--- !u!114 &2087514801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087514796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da4fbc46d9badb642b1e126c55b9821e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  player: {fileID: 1010925638}
+  startPosition: {fileID: 0}
+  detectionRange: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

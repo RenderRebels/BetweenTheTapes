@@ -50,13 +50,6 @@ public class HandAI : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    private void StartPosition(Transform transform)
-    {
-        Vector2 position = transform.position;
-        startPosition = transform;
-    }
-
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
