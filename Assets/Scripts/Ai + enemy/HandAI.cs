@@ -46,6 +46,14 @@ public class HandAI : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
+    private void MoveTowardsStartPosition(Vector2 position)
+    {
+        Vector2 direction = (startPosition.position - transform.position).normalized;
+        rb.MovePosition(position);
+        movement = direction;
+    }
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -60,5 +68,14 @@ public class HandAI : MonoBehaviour
         {
             isPlayerInRange = false;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("No go"))
+        {
+            //Create a repultion that keeps the hands off the ground
+        }
+        
     }
 }
