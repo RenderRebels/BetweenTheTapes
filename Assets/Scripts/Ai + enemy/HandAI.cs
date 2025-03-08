@@ -8,7 +8,7 @@ public class HandAI : MonoBehaviour
     [Header("Detection Settings")]
     public Transform player;
     public Transform startPosition;
-    public float detectionRange = 5f; 
+    public float detectionRange = 5f;
 
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -53,7 +53,6 @@ public class HandAI : MonoBehaviour
         movement = direction;
     }
 
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -68,14 +67,5 @@ public class HandAI : MonoBehaviour
         {
             isPlayerInRange = false;
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("No go"))
-        {
-            //Create a repultion that keeps the hands off the ground
-        }
-        
     }
 }
