@@ -8,6 +8,8 @@ TagManager:
   - Ladder
   - Enemy
   - No go
+  - RHand
+  - LHand
   layers:
   - Default
   - TransparentFX

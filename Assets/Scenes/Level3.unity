@@ -314,8 +314,8 @@ GameObject:
   - component: {fileID: 58679428}
   - component: {fileID: 58679429}
   m_Layer: 0
-  m_Name: Square
-  m_TagString: Untagged
+  m_Name: Hand
+  m_TagString: LHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,6 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   player: {fileID: 1010925638}
+  hand: {fileID: 0}
   startPosition: {fileID: 2008503870}
   detectionRange: 5
 --- !u!70 &58679429
@@ -2399,6 +2400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartPosition (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6528229455903363949, guid: 37cff6243ecdc1c4d99a0eafb66d82f8, type: 3}
+      propertyPath: m_TagString
+      value: No go
+      objectReference: {fileID: 0}
     - target: {fileID: 8175751504302692194, guid: 37cff6243ecdc1c4d99a0eafb66d82f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.66
@@ -3431,6 +3436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   player: {fileID: 0}
+  hand: {fileID: 0}
   startPosition: {fileID: 0}
   detectionRange: 5
 --- !u!1 &1513918884
@@ -53365,8 +53371,8 @@ GameObject:
   - component: {fileID: 2087514800}
   - component: {fileID: 2087514801}
   m_Layer: 0
-  m_Name: Square (1)
-  m_TagString: Untagged
+  m_Name: Hand
+  m_TagString: RHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53528,6 +53534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4
   player: {fileID: 1010925638}
+  hand: {fileID: 0}
   startPosition: {fileID: 1151245753}
   detectionRange: 5
 --- !u!1001 &7410257425875232383

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HandAI : MonoBehaviour
@@ -7,12 +8,14 @@ public class HandAI : MonoBehaviour
 
     [Header("Detection Settings")]
     public Transform player;
+    public Transform hand;
     public Transform startPosition;
     public float detectionRange = 5f;
 
     private Rigidbody2D rb;
     private Vector2 movement;
     private bool isPlayerInRange = false;
+    private bool isGroundClose = false;
 
     void Start()
     {
@@ -33,6 +36,11 @@ public class HandAI : MonoBehaviour
         {
             MoveTowardsPlayer();
         }
+
+        if (isGroundClose)
+        {
+            MoveAwayFromGround();
+        }
     }
 
     private void TrackPlayer()
@@ -41,16 +49,18 @@ public class HandAI : MonoBehaviour
         movement = direction;
     }
 
+
     private void MoveTowardsPlayer()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    private void MoveTowardsStartPosition(Vector2 position)
+
+    private void MoveAwayFromGround()
     {
-        Vector2 direction = (startPosition.position - transform.position).normalized;
-        rb.MovePosition(position);
-        movement = direction;
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        Vector2 direction = (hand.position + transform.position).normalized;
+        movement += direction * Time.fixedDeltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -66,6 +76,14 @@ public class HandAI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision2D)
+    {
+        if (CompareTag("No go"))
+        {
+            isGroundClose = true;
         }
     }
 }
