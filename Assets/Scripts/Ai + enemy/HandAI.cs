@@ -8,9 +8,9 @@ public class HandAI : MonoBehaviour
 
     [Header("Detection Settings")]
     public Transform player;
-    public Transform hand;
-    public Transform startPosition;
+    public GameObject handPrefab;
     public float detectionRange = 5f;
+    public int resetTime = 5;
 
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -34,14 +34,10 @@ public class HandAI : MonoBehaviour
     {
         if (isPlayerInRange)
         {
-            MoveTowardsPlayer();
-        }
-
-        if (isGroundClose)
-        {
-            MoveAwayFromGround();
+            MoveTowardsAttackPlayer();
         }
     }
+
 
     private void TrackPlayer()
     {
@@ -49,19 +45,19 @@ public class HandAI : MonoBehaviour
         movement = direction;
     }
 
-
-    private void MoveTowardsPlayer()
+    private void MoveTowardsAttackPlayer()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-
-    private void MoveAwayFromGround()
+    private void ResetPoint()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        Vector2 direction = (hand.position + transform.position).normalized;
-        movement += direction * Time.fixedDeltaTime;
+        if (handPrefab)
+        {
+
+        }
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
