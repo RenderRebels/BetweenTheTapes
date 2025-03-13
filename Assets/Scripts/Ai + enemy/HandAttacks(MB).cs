@@ -14,9 +14,9 @@ public class HandBoss : MonoBehaviour
 
     void Start()
     {
-        // Save the starting position
+     
         startPosition = transform.position;
-        // Start the attack loop
+     
         StartCoroutine(AttackLoop());
     }
 
@@ -24,10 +24,9 @@ public class HandBoss : MonoBehaviour
     {
         while (true)
         {
-            // Wait before the first attack
+          
             yield return new WaitForSeconds(attackDelay);
 
-            // Randomly choose between swoop and slam attack
             if (Random.value > 0.5f)
             {
                 SetSwoopTarget();
@@ -38,14 +37,13 @@ public class HandBoss : MonoBehaviour
                 yield return StartCoroutine(SlamDown());
             }
 
-            // Return to start position
             yield return StartCoroutine(ReturnToStart());
         }
     }
 
     void SetSwoopTarget()
     {
-        // Set the target position when the swoop attack triggers
+   
         swoopTarget = target.position;
     }
 
