@@ -9,15 +9,16 @@ public class BossOne : MonoBehaviour
     public GameObject bubbleProjectilePrefab;
     public float chaseDistance = 5.0f;
     public float moveSpeed = 2.0f;
-    public float attackInterval = 3f; // How often the boss attacks
+    public float attackInterval = 3f;
     public int damageAmount = 10;
+    public int bossHealth = 5; // Boss starts with 5 HP
+    private bool isEnraged = false; // Enraged state
 
     private Vector3 targetPoint;
     private float attackTimer;
 
     void Start()
     {
-        // Start the boss moving towards point B first
         targetPoint = pointB.position;
     }
 
@@ -27,23 +28,19 @@ public class BossOne : MonoBehaviour
 
         if (distanceToPlayer < chaseDistance)
         {
-            // If the player is close enough, chase them and try to attack
             ChasePlayer();
             HandleAttacks();
         }
         else
         {
-            // Otherwise, just patrol back and forth
             Patrol();
         }
     }
 
     void Patrol()
     {
-        // Move towards the current target point (either A or B)
         transform.position = Vector3.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
 
-        // If we reach point A, switch to moving toward point B, and vice versa
         if (Vector3.Distance(transform.position, pointA.position) < 0.1f)
         {
             targetPoint = pointB.position;
@@ -56,7 +53,6 @@ public class BossOne : MonoBehaviour
 
     void ChasePlayer()
     {
-        // Move towards the player's position
         transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
     }
 
@@ -64,47 +60,75 @@ public class BossOne : MonoBehaviour
     {
         attackTimer += Time.deltaTime;
 
-        // If enough time has passed, launch a bubble attack
         if (attackTimer >= attackInterval)
         {
-            StartCoroutine(BubbleProjectileAttack());
+            if (isEnraged)
+            {
+                StartCoroutine(BubbleProjectileAttack());
+                StartCoroutine(BubbleProjectileAttack());
+                StartCoroutine(BubbleProjectileAttack());
+            }
+            else
+            {
+                StartCoroutine(BubbleProjectileAttack());
+            }
             attackTimer = 0;
         }
     }
 
     private IEnumerator BubbleProjectileAttack()
     {
-        // Spawn a bubble at the boss's position
         GameObject bubble = Instantiate(bubbleProjectilePrefab, transform.position, Quaternion.identity);
         Rigidbody bubbleRb = bubble.GetComponent<Rigidbody>();
 
         if (bubbleRb != null)
         {
-            float initialSpeed = 2f; // Start slower for a more bubble-like effect
-            float floatStrength = 0.3f; // How much the bubble slowly rises
-            float trackingSpeed = 1.5f; // How fast the bubble adjusts towards the player
-
+            float initialSpeed = 2f;
+            float floatStrength = 0.3f;
+            float trackingSpeed = 1.5f;
             float timer = 0f;
-            while (timer < 5f) // The bubble will last up to 5 seconds
+
+            while (timer < 5f)
             {
                 timer += Time.deltaTime;
-
-                // Continuously adjust direction toward the player
                 Vector3 direction = (player.position - bubble.transform.position).normalized;
-                Vector3 floatyDirection = direction + Vector3.up * floatStrength; // Adds an upward drift
-
-                // Smoothly move toward the player while floating
+                Vector3 floatyDirection = direction + Vector3.up * floatStrength;
                 bubbleRb.linearVelocity = Vector3.Lerp(bubbleRb.linearVelocity, floatyDirection * initialSpeed, trackingSpeed * Time.deltaTime);
 
-                // Add a gentle left-right wobble
                 float wave = Mathf.Sin(Time.time * 2f) * 0.3f;
                 bubbleRb.AddForce(new Vector3(wave, 0, 0), ForceMode.Acceleration);
 
                 yield return null;
             }
 
-            // After floating for a bit, the bubble pops
             Destroy(bubble);
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        bossHealth -= damage;
+        Debug.Log("Boss took damage! HP left: " + bossHealth);
+
+        if (bossHealth <= 2 && !isEnraged)
+        {
+            isEnraged = true;
+            Debug.Log("Boss is enraged!");
+        }
+
+        if (bossHealth <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Boss defeated!");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bubble"))
+        {
+            TakeDamage(1);
+            Destroy(other.gameObject);
         }
     }
 }
