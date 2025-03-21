@@ -33533,6 +33533,9 @@ MonoBehaviour:
   slamSpeed: 15
   returnSpeed: 5
   attackDelay: 2
+  debrisPrefab: {fileID: 0}
+  debrisSpawnChance: 0.3
+  health: 5
 --- !u!1 &932827005
 GameObject:
   m_ObjectHideFlags: 0
@@ -84674,13 +84677,12 @@ PrefabInstance:
       propertyPath: startPosition
       value: 
       objectReference: {fileID: 2008503870}
-    m_RemovedComponents:
-    - {fileID: 6660650837900688718, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4647479013031666033, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
-      insertIndex: -1
+      insertIndex: 2
       addedObject: {fileID: 919481464}
   m_SourcePrefab: {fileID: 100100000, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
 --- !u!1660057539 &9223372036854775807

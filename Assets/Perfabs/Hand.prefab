@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8577141467666024769}
   - component: {fileID: 4536095366641107094}
   - component: {fileID: 6146201490130006489}
-  - component: {fileID: 6660650837900688718}
   - component: {fileID: 3833862287882981430}
   m_Layer: 0
   m_Name: Hand
@@ -164,24 +163,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.2893062, y: 7.5400305}
   m_EdgeRadius: 0
---- !u!114 &6660650837900688718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4647479013031666033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da4fbc46d9badb642b1e126c55b9821e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 4
-  player: {fileID: 0}
-  hand: {fileID: 0}
-  startPosition: {fileID: 0}
-  detectionRange: 5
-  resetTime: 5
 --- !u!70 &3833862287882981430
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
