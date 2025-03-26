@@ -5,7 +5,7 @@ public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject optionsMenu;
-    [SerializeField] private GameObject pauseMenuImage; // Reference to the Image GameObject
+    [SerializeField] private GameObject pauseMenuImage;
     private bool isPaused = false;
 
     void Update()
