@@ -4,7 +4,7 @@ using System.Collections;
 
 public class CollectibleItem : MonoBehaviour
 {
-    public GameObject notePopup;
+    public GameObject notePopup; // Assign the UI Image in the Inspector
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,18 +18,24 @@ public class CollectibleItem : MonoBehaviour
     {
         if (notePopup != null)
         {
-            GameObject popupInstance = Instantiate(notePopup, transform.position, Quaternion.identity);
-            StartCoroutine(HidePopupAfterDelay(popupInstance, 1f));
+            Debug.Log("Popup should appear now!"); // Debugging
+            notePopup.SetActive(true); // Show popup
+            StartCoroutine(HidePopupAfterDelay(5f)); // Hide after 5 seconds
         }
-        Destroy(gameObject);
     }
 
-    IEnumerator HidePopupAfterDelay(GameObject popup, float delay)
+    IEnumerator HidePopupAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        if (popup != null)
+
+        if (notePopup != null)
         {
-            Destroy(popup);
+            Debug.Log("Hiding popup now!"); // Debugging
+            notePopup.SetActive(false); // Hide the UI
         }
+
+        yield return new WaitForSeconds(2f); // Wait 2 more seconds
+        Debug.Log("Destroying collectible now!"); // Debugging
+        Destroy(gameObject); // Destroy the collectible
     }
 }
