@@ -20,7 +20,8 @@ public class CollectibleItem : MonoBehaviour
             Debug.Log("Popup should appear now!");
             notePopup.SetActive(true); // Show popup
             Destroy(gameObject, 5.0f);
-           // StartCoroutine(HidePopupAfterDelay(5f)); // Hide after 5 seconds
+            Destroy(notePopup, 5.0f);
+            // StartCoroutine(HidePopupAfterDelay(5f)); // Hide after 5 seconds
         }
     }
 
