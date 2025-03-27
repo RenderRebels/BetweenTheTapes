@@ -35187,6 +35187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1576945158}
   optionsMenu: {fileID: 1603564478}
+  pauseMenuImage: {fileID: 0}
 --- !u!4 &1769919333
 Transform:
   m_ObjectHideFlags: 0
@@ -84626,8 +84627,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2465592571053898624, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.1819124
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465592571053898624, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.07
+      value: 20.544
       objectReference: {fileID: 0}
     - target: {fileID: 2465592571053898624, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -84669,6 +84674,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hand
       objectReference: {fileID: 0}
+    - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6660650837900688718, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: player
       value: 
@@ -84677,6 +84690,10 @@ PrefabInstance:
       propertyPath: startPosition
       value: 
       objectReference: {fileID: 2008503870}
+    - target: {fileID: 8577141467666024769, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 140433255743585067, guid: 8d99210b395fe60489f1d1c074edc5e6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
