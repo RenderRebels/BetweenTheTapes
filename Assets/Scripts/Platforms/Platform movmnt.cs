@@ -49,32 +49,6 @@ public class MovingPlatform : MonoBehaviour
         {
             moveOnContact = false;
             MovePlatform();
-            collision.gameObject.transform.SetParent(this.gameObject.transform);
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.gameObject.transform.SetParent(null);
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (transform.childCount > 0)
-        {
-            foreach (Transform child in transform)
-            {
-                if (child.CompareTag("Player"))
-                {
-                    Rigidbody2D rb = child.GetComponent<Rigidbody2D>();
-                    Vector2 velocity = rb.velocity;
-                    velocity.x = velocity.x + (transform.position.x - transform.position.x) * Time.deltaTime * speed;
-                    rb.velocity = velocity;
-                }
-            }
         }
     }
 }
