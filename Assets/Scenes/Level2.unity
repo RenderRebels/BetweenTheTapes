@@ -300,7 +300,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1901491740133590467, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: MinDistance
-      value: 0.8037739
+      value: 1.189949
       objectReference: {fileID: 0}
     - target: {fileID: 2334044670603305471, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: healthHUD
@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6010181681432847445, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.041636504
+      value: 0.0416365
       objectReference: {fileID: 0}
     - target: {fileID: 6010181681432847445, guid: 71e03180518546c43a4e2d9f1a2a1f54, type: 3}
       propertyPath: m_LocalRotation.w
