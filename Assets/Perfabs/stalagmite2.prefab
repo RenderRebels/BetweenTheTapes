@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2531277425212923402}
   - component: {fileID: 890495732134457275}
   - component: {fileID: 6908411912431264183}
+  - component: {fileID: 8079056788118005794}
   m_Layer: 0
   m_Name: stalagmite2
   m_TagString: Untagged
@@ -153,3 +154,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5, y: 0.84}
   m_Direction: 0
+--- !u!114 &8079056788118005794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6603233843480556317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a93735e86d532845a7c1e557925306f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
