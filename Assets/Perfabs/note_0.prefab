@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 5228409442703973009, guid: fee923488f06fbb45aa74d105138ebf0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9613208, g: 0.8066038, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3ff521518a21f49a02ef4c8388b79c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notePopup: {fileID: 8927214596243180792, guid: 839be757d51e667419a91f111fa45d11, type: 3}
+  notePopup: {fileID: 0}
 --- !u!70 &3742216727395517848
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,6 +136,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.3, y: 0.31}
+  m_Offset: {x: 0.011844635, y: -0.061591286}
+  m_Size: {x: 0.40896913, y: 0.50372505}
   m_Direction: 0
