@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2678004561312209030}
   - component: {fileID: 9139358415352832817}
   - component: {fileID: 1926684671571274169}
+  - component: {fileID: 2375179308056031944}
   m_Layer: 0
   m_Name: stalagmite3
   m_TagString: Untagged
@@ -153,3 +154,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2375179308056031944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2744641777655103983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a93735e86d532845a7c1e557925306f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
