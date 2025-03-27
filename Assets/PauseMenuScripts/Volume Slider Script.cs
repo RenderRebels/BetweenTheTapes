@@ -9,7 +9,7 @@ public class VolumeSliderScript : MonoBehaviour
 
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("Volume", 0.75f);
+        //slider.value = PlayerPrefs.GetFloat("Volume", 0.75f);
     }
 
     public void SetVolume(float volume)

@@ -8,10 +8,10 @@ public class VolumeController : MonoBehaviour
     {
         Slider slider = GetComponent<Slider>();
         float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 0.5f);
-        slider.value = savedVolume;
+        //slider.value = savedVolume;
         SetVolume(savedVolume);
 
-        slider.onValueChanged.AddListener(SetVolume);
+        //slider.onValueChanged.AddListener(SetVolume);
     }
 
     public void SetVolume(float volume)
