@@ -11,7 +11,6 @@ public class HandBoss : MonoBehaviour
     public GameObject debrisPrefab;  // Assign in the inspector
     public float debrisSpawnChance = 0.3f; // 30% chance
     public int health = 5; // Boss health
-
     private Vector3 startPosition;
     private bool isAttacking = false;
     private bool enraged = false;
