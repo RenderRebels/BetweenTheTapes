@@ -24,19 +24,4 @@ public class CollectibleItem : MonoBehaviour
             // StartCoroutine(HidePopupAfterDelay(5f)); // Hide after 5 seconds
         }
     }
-
-    //IEnumerator HidePopupAfterDelay(float delay)
-    //{
-    //    yield return new WaitForSeconds(delay);
-
-    //    if (notePopup != null)
-    //    {
-    //        Debug.Log("Hiding popup now!"); // Debugging
-    //        notePopup.SetActive(false); // Hide the UI
-    //    }
-
-    //    yield return new WaitForSeconds(2f); // Wait 2 more seconds
-    //    Debug.Log("Destroying collectible now!"); // Debugging
-    //    Destroy(gameObject); // Destroy the collectible
-    //}
 }
