@@ -8,37 +8,58 @@ public class HandBoss : MonoBehaviour
     public float slamSpeed = 15f;
     public float returnSpeed = 5f;
     public float attackDelay = 2f;
-    public GameObject debrisPrefab;  // Assign in the inspector
+    public GameObject[] debrisPrefabs; // Array of debris prefabs
     public float debrisSpawnChance = 0.3f; // 30% chance
     public int health = 5; // Boss health
+
     private Vector3 startPosition;
     private bool isAttacking = false;
     private bool enraged = false;
+    private bool playerInRange = false;
 
-    void Start()
+    private void Start()
     {
         startPosition = transform.position;
         StartCoroutine(AttackLoop());
     }
 
-    IEnumerator AttackLoop()
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+        }
+    }
+
+    private IEnumerator AttackLoop()
     {
         while (true)
         {
             yield return new WaitForSeconds(attackDelay);
-            if (Random.value > 0.5f)
+            if (playerInRange && !isAttacking) // Only attack if the player is in range
             {
-                yield return StartCoroutine(SwoopDown());
+                if (Random.value > 0.5f)
+                {
+                    yield return StartCoroutine(SwoopDown());
+                }
+                else
+                {
+                    yield return StartCoroutine(SlamDown());
+                }
+                yield return StartCoroutine(ReturnToStart());
             }
-            else
-            {
-                yield return StartCoroutine(SlamDown());
-            }
-            yield return StartCoroutine(ReturnToStart());
         }
     }
 
-    IEnumerator SwoopDown()
+    private IEnumerator SwoopDown()
     {
         isAttacking = true;
         Vector3 swoopTarget = target.position;
@@ -50,7 +71,7 @@ public class HandBoss : MonoBehaviour
         isAttacking = false;
     }
 
-    IEnumerator SlamDown()
+    private IEnumerator SlamDown()
     {
         isAttacking = true;
         Vector3 slamPosition = new Vector3(target.position.x, target.position.y - 2f, target.position.z);
@@ -62,22 +83,27 @@ public class HandBoss : MonoBehaviour
 
         if (Random.value < debrisSpawnChance) // Chance to spawn debris
         {
-            SpawnDebris();
+            SpawnRandomDebris();
         }
 
         isAttacking = false;
     }
 
-    void SpawnDebris()
+    private void SpawnRandomDebris()
     {
-        if (debrisPrefab != null)
+        if (debrisPrefabs.Length > 0) // Make sure there are debris prefabs assigned
         {
-            GameObject debris = Instantiate(debrisPrefab, transform.position, Quaternion.identity);
-            debris.AddComponent<Debris>(); // Attach Debris script
+            int randomIndex = Random.Range(0, debrisPrefabs.Length);
+            GameObject debrisPrefab = debrisPrefabs[randomIndex];
+
+            if (debrisPrefab != null)
+            {
+                Instantiate(debrisPrefab, transform.position, Quaternion.identity);
+            }
         }
     }
 
-    IEnumerator ReturnToStart()
+    private IEnumerator ReturnToStart()
     {
         while (Vector3.Distance(transform.position, startPosition) > 0.1f)
         {
@@ -102,7 +128,7 @@ public class HandBoss : MonoBehaviour
         }
     }
 
-    void Enrage()
+    private void Enrage()
     {
         enraged = true;
         swoopSpeed *= 1.5f;
@@ -113,22 +139,9 @@ public class HandBoss : MonoBehaviour
         Debug.Log("Hand Boss is enraged! It moves faster and attacks more aggressively.");
     }
 
-    void Die()
+    private void Die()
     {
         Debug.Log("Hand Boss Defeated!");
         Destroy(gameObject);
-    }
-}
-
-public class Debris : MonoBehaviour
-{
-    private void OnCollisionEnter(Collision collision)
-    {
-        HandBoss boss = collision.gameObject.GetComponent<HandBoss>();
-        if (boss != null)
-        {
-            boss.TakeDamage(1);
-            Destroy(gameObject); // Destroy debris after impact
-        }
     }
 }

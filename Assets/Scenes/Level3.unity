@@ -32824,7 +32824,10 @@ MonoBehaviour:
   slamSpeed: 15
   returnSpeed: 5
   attackDelay: 2
-  debrisPrefab: {fileID: 0}
+  debrisPrefabs:
+  - {fileID: 4220662961073555237, guid: 48f76361d9c5b0349b31fb0f5b8c5f5d, type: 3}
+  - {fileID: 6603233843480556317, guid: 4ee2a2455a303e841a8fa24dfce6aa2f, type: 3}
+  - {fileID: 2744641777655103983, guid: 24c21c24a3a20c94e9013c99f0d9c032, type: 3}
   debrisSpawnChance: 0.3
   health: 5
 --- !u!4 &919481469 stripped
@@ -32844,11 +32847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4fbc46d9badb642b1e126c55b9821e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  player: {fileID: 0}
-  handPrefab: {fileID: 0}
-  detectionRange: 5
-  resetTime: 5
+  rb: {fileID: 0}
 --- !u!1 &932827005
 GameObject:
   m_ObjectHideFlags: 0
@@ -34259,11 +34258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da4fbc46d9badb642b1e126c55b9821e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  player: {fileID: 0}
-  handPrefab: {fileID: 0}
-  detectionRange: 5
-  resetTime: 5
+  rb: {fileID: 0}
 --- !u!1 &1513918884
 GameObject:
   m_ObjectHideFlags: 0
@@ -89442,6 +89437,14 @@ PrefabInstance:
     - target: {fileID: 4647479013031666033, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_Name
       value: Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: m_Size.x
+      value: 6.5951624
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.17468584
       objectReference: {fileID: 0}
     - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
