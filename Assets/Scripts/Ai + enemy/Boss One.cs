@@ -15,6 +15,8 @@ public class BossOne : MonoBehaviour
     public int damageAmount = 1;
     public int bossHealth = 5;
 
+    public int enrageHealth = 2; // Health value at which the boss will enrage
+
     private bool isEnraged = false;
     private Vector2 targetPoint;
     private float attackTimer;
@@ -113,7 +115,7 @@ public class BossOne : MonoBehaviour
         bossHealth -= damage;
         Debug.Log("Boss took damage! HP left: " + bossHealth);
 
-        if (bossHealth <= 2 && !isEnraged)
+        if (bossHealth <= enrageHealth && !isEnraged)  // Enrage health check
         {
             isEnraged = true;
             Debug.Log("Boss is enraged!");
