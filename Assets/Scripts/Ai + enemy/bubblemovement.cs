@@ -9,17 +9,21 @@ public class BubbleProjectile : MonoBehaviour
     public float trackingSpeed = 1.5f;  // Speed at which it tracks the player
     public float lifetime = 5f;  // Time before bubble is destroyed
 
-    private Rigidbody bubbleRb;
+    private Rigidbody2D bubbleRb;  // Rigidbody2D component
 
     void Start()
     {
-        // Get the Rigidbody component
-        bubbleRb = GetComponent<Rigidbody>();
+        // Get the Rigidbody2D component
+        bubbleRb = GetComponent<Rigidbody2D>();
 
         // Disable gravity for the bubble
         if (bubbleRb != null)
         {
-            bubbleRb.useGravity = false;
+            bubbleRb.gravityScale = 0f; // Ensure gravity doesn't affect the bubble
+        }
+        else
+        {
+            Debug.LogError("Rigidbody2D not found on Bubble! Ensure it's attached to the prefab.");
         }
 
         // Find the player by tag
@@ -51,15 +55,12 @@ public class BubbleProjectile : MonoBehaviour
             // Apply floating effect and move towards the player
             Vector3 floatyDirection = direction + Vector3.up * floatStrength;
 
-            // Calculate the desired velocity (tracking + float effect)
-            Vector3 desiredVelocity = floatyDirection * initialSpeed;
-
-            // Smoothly transition to the new velocity
-            bubbleRb.linearVelocity = Vector3.Lerp(bubbleRb.linearVelocity, desiredVelocity, trackingSpeed * Time.deltaTime);
+            // Use linearVelocity to set the speed and direction (in 2D)
+            bubbleRb.velocity = Vector2.Lerp(bubbleRb.velocity, floatyDirection * initialSpeed, trackingSpeed * Time.deltaTime);
 
             // Add a wave-like force for extra effect
             float wave = Mathf.Sin(Time.time * 2f) * 0.3f;
-            bubbleRb.AddForce(new Vector3(wave, 0, 0), ForceMode.Acceleration);
+            bubbleRb.AddForce(new Vector2(wave, 0), ForceMode2D.Force);
 
             yield return null;
         }
