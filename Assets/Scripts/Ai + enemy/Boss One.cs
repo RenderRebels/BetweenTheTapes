@@ -17,7 +17,7 @@ public class BossOne : MonoBehaviour
     private Vector3 targetPoint;
     private float attackTimer;
 
-    public Transform bubbleSpawnPoint;  // New field for the bubble spawn position
+    public Transform bubbleSpawnPoint;  // Bubble spawn point
 
     void Start()
     {
@@ -80,31 +80,16 @@ public class BossOne : MonoBehaviour
 
     private IEnumerator BubbleProjectileAttack()
     {
-        GameObject bubble = Instantiate(bubbleProjectilePrefab, bubbleSpawnPoint.position, Quaternion.identity);  // Use bubbleSpawnPoint.position
-        Rigidbody bubbleRb = bubble.GetComponent<Rigidbody>();
+        GameObject bubble = Instantiate(bubbleProjectilePrefab, bubbleSpawnPoint.position, Quaternion.identity);
 
-        if (bubbleRb != null)
+        // Set the player reference on the bubble to track the player
+        BubbleProjectile bubbleScript = bubble.GetComponent<BubbleProjectile>();
+        if (bubbleScript != null)
         {
-            float initialSpeed = 2f;
-            float floatStrength = 0.3f;
-            float trackingSpeed = 1.5f;
-            float timer = 0f;
-
-            while (timer < 5f)
-            {
-                timer += Time.deltaTime;
-                Vector3 direction = (player.position - bubble.transform.position).normalized;
-                Vector3 floatyDirection = direction + Vector3.up * floatStrength;
-                bubbleRb.linearVelocity = Vector3.Lerp(bubbleRb.linearVelocity, floatyDirection * initialSpeed, trackingSpeed * Time.deltaTime);
-
-                float wave = Mathf.Sin(Time.time * 2f) * 0.3f;
-                bubbleRb.AddForce(new Vector3(wave, 0, 0), ForceMode.Acceleration);
-
-                yield return null;
-            }
-
-            Destroy(bubble);
+            bubbleScript.player = player;  // Pass the player reference to the bubble
         }
+
+        yield return null;
     }
 
     public void TakeDamage(int damage)
