@@ -32799,6 +32799,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 561243321554628189, guid: 2a04a34e2299ede44aea02c1e9e2dbd0, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1835215
+      objectReference: {fileID: 0}
+    - target: {fileID: 561243321554628189, guid: 2a04a34e2299ede44aea02c1e9e2dbd0, type: 3}
+      propertyPath: m_Size.y
+      value: 0.12408751
+      objectReference: {fileID: 0}
+    - target: {fileID: 561243321554628189, guid: 2a04a34e2299ede44aea02c1e9e2dbd0, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.002929456
+      objectReference: {fileID: 0}
+    - target: {fileID: 561243321554628189, guid: 2a04a34e2299ede44aea02c1e9e2dbd0, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.05515644
+      objectReference: {fileID: 0}
     - target: {fileID: 1085261800004708519, guid: 2a04a34e2299ede44aea02c1e9e2dbd0, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -33174,6 +33190,7 @@ MonoBehaviour:
   slamSpeed: 11
   returnSpeed: 15
   attackDelay: 0.8
+  slamStayDuration: 1
   debrisPrefabs:
   - {fileID: 4220662961073555237, guid: 48f76361d9c5b0349b31fb0f5b8c5f5d, type: 3}
   - {fileID: 6603233843480556317, guid: 4ee2a2455a303e841a8fa24dfce6aa2f, type: 3}
@@ -34024,6 +34041,7 @@ MonoBehaviour:
   slamSpeed: 11
   returnSpeed: 15
   attackDelay: 0.8
+  slamStayDuration: 1
   debrisPrefabs:
   - {fileID: 4220662961073555237, guid: 48f76361d9c5b0349b31fb0f5b8c5f5d, type: 3}
   - {fileID: 6603233843480556317, guid: 4ee2a2455a303e841a8fa24dfce6aa2f, type: 3}
