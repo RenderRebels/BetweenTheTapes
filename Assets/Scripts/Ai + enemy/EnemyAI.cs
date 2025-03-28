@@ -19,14 +19,6 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {
-        if (isPlayerInRange)
-        {
-            TrackPlayer();
-        }
-    }
-
     void FixedUpdate()
     {
         if (isPlayerInRange)
@@ -83,6 +75,32 @@ public class EnemyAI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
+        }
+    }
+    private void FlipTowardsPlayer()
+    {
+        if (player != null)
+        {
+            Debug.Log($"Player X: {player.position.x}, Enemy X: {transform.position.x}, Scale X: {transform.localScale.x}");
+            if ((player.position.x < transform.position.x && transform.localScale.x > 0) || 
+                (player.position.x > transform.position.x && transform.localScale.x < 0))
+            {
+                
+                Vector3 newScale = transform.localScale;
+                newScale.x *= -1;
+                transform.localScale = newScale;
+            }
+        }
+    
+    }
+
+    void Update()
+    {
+        if (isPlayerInRange)
+        {
+            TrackPlayer();
+            Debug.Log("Enemy flipped!");
+            FlipTowardsPlayer(); 
         }
     }
 }
