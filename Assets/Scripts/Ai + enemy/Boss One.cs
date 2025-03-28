@@ -19,6 +19,9 @@ public class BossOne : MonoBehaviour
 
     public Transform bubbleSpawnPoint;  // Bubble spawn point
 
+    public float minY = 0f;  // Minimum Y position
+    public float maxY = 5f;  // Maximum Y position
+
     void Start()
     {
         targetPoint = pointB.position;
@@ -55,7 +58,14 @@ public class BossOne : MonoBehaviour
 
     void ChasePlayer()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        // Calculate the target position for chasing the player
+        Vector3 targetPosition = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+        // Clamp the Y position to prevent the boss from going too high
+        targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY); // Clamp Y position between minY and maxY
+
+        // Update the boss's position
+        transform.position = targetPosition;
     }
 
     void HandleAttacks()
