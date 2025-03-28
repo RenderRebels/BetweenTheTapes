@@ -50,8 +50,9 @@ MonoBehaviour:
   player: {fileID: 0}
   initialSpeed: 2
   floatStrength: 0.3
-  trackingSpeed: 1.5
+  trackingSpeed: 3
   lifetime: 5
+  damageAmount: 1
 --- !u!212 &2531494769724472734
 SpriteRenderer:
   m_ObjectHideFlags: 0
