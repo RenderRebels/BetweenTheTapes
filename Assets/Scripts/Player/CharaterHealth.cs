@@ -71,4 +71,22 @@ public class CharacterHealth : MonoBehaviour
             audioSource.PlayOneShot(deathSound);
         }
     }
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
+        Debug.Log("Health: " + currentHealth);
+        UpdateHealthHUD();
+
+        if (currentHealth <= minHealth)
+        {
+            PlayDeathSound();
+            Invoke("RestartScene", 1f);
+        }
+        else
+        {
+            PlayDamageSound();
+        }
+    }
+
 }
