@@ -10,6 +10,7 @@ public class BubbleProjectile : MonoBehaviour
     public float lifetime = 5f;  // Time before bubble is destroyed
 
     private Rigidbody2D bubbleRb;  // Rigidbody2D component
+    public int damageAmount = 1;  // The amount of damage the bubble does
 
     void Start()
     {
@@ -67,5 +68,23 @@ public class BubbleProjectile : MonoBehaviour
 
         // Destroy the bubble after its lifetime ends
         Destroy(gameObject);
+    }
+
+    // Detect collision with the player
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Check if the bubble collided with the player
+        if (other.CompareTag("Player"))
+        {
+            // Get the player's CharacterHealth script and call TakeDamage
+            CharacterHealth playerHealth = other.GetComponent<CharacterHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damageAmount);  // Call the TakeDamage method on the player
+            }
+
+            // Destroy the bubble after it damages the player
+            Destroy(gameObject);
+        }
     }
 }
