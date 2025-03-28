@@ -7,36 +7,37 @@ public class BossOne : MonoBehaviour
     public Transform pointA;
     public Transform pointB;
     public GameObject bubbleProjectilePrefab;
+    public GameObject levelEndTrigger; // Level end object (inactive until boss is defeated)
+
     public float chaseDistance = 5.0f;
     public float moveSpeed = 2.0f;
     public float attackInterval = 3f;
     public int damageAmount = 1;
-    public int bossHealth = 5; // Boss starts with 5 HP
-    private bool isEnraged = false; // Enraged state
+    public int bossHealth = 5;
 
-    private Vector3 targetPoint;
+    private bool isEnraged = false;
+    private Vector2 targetPoint;
     private float attackTimer;
 
-    public Transform bubbleSpawnPoint;  // Bubble spawn point
-    public float minY = 0f;  // Minimum Y position
-    public float maxY = 5f;  // Maximum Y position
+    public Transform bubbleSpawnPoint;
+    public float minY = 0f;
+    public float maxY = 5f;
 
-    public GameObject levelEndTrigger; // Reference to the level end trigger GameObject
+    private Rigidbody2D rb;
 
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         targetPoint = pointB.position;
 
-        // Initially disable the level end trigger
+        // Make sure level end trigger is inactive until boss dies
         if (levelEndTrigger != null)
-        {
             levelEndTrigger.SetActive(false);
-        }
     }
 
     void Update()
     {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
         if (distanceToPlayer < chaseDistance)
         {
@@ -51,24 +52,25 @@ public class BossOne : MonoBehaviour
 
     void Patrol()
     {
-        // Move towards the target points using MoveTowards for fixed speed
-        transform.position = Vector3.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+        // Move the boss smoothly between pointA and pointB
+        transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, pointA.position) < 0.1f)
+        // If close to a patrol point, switch target
+        if (Vector2.Distance(transform.position, targetPoint) < 0.1f)
         {
-            targetPoint = pointB.position;
-        }
-        else if (Vector3.Distance(transform.position, pointB.position) < 0.1f)
-        {
-            targetPoint = pointA.position;
+            targetPoint = (targetPoint == (Vector2)pointA.position) ? pointB.position : pointA.position;
         }
     }
 
     void ChasePlayer()
     {
-        Vector3 targetPosition = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        // Move towards the player
+        Vector2 targetPosition = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+
+        // Clamp Y position to prevent excessive vertical movement
         targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
-        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f); // Smooth chase
+
+        transform.position = targetPosition;
     }
 
     void HandleAttacks()
@@ -93,7 +95,10 @@ public class BossOne : MonoBehaviour
 
     private IEnumerator BubbleProjectileAttack()
     {
+        // Instantiate a bubble at the spawn point
         GameObject bubble = Instantiate(bubbleProjectilePrefab, bubbleSpawnPoint.position, Quaternion.identity);
+
+        // Set the player reference for tracking
         BubbleProjectile bubbleScript = bubble.GetComponent<BubbleProjectile>();
         if (bubbleScript != null)
         {
@@ -116,23 +121,25 @@ public class BossOne : MonoBehaviour
 
         if (bossHealth <= 0)
         {
-            Destroy(gameObject);
             Debug.Log("Boss defeated!");
 
-            // Enable the level end trigger after boss defeat
+            // Activate level end trigger when the boss dies
             if (levelEndTrigger != null)
-            {
                 levelEndTrigger.SetActive(true);
-            }
+
+            Destroy(gameObject);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Boss detected collision with: " + other.gameObject.name);
+
         if (other.CompareTag("Bubble"))
         {
+            Debug.Log("Bubble hit the boss!");
             TakeDamage(1);
-            Destroy(other.gameObject); // Destroy bubble on contact
+            Destroy(other.gameObject);
         }
     }
 }
