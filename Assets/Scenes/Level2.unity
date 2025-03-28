@@ -3850,7 +3850,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4022049277410912632, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: speed
-      value: 8
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4022049277410912632, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: pointA
@@ -4530,9 +4530,9 @@ MonoBehaviour:
   pointA: {fileID: 1929673406}
   pointB: {fileID: 129451928}
   bubbleProjectilePrefab: {fileID: 2573641704496301427, guid: 64ec8e5fa9bd2cb4abb09a77dc105967, type: 3}
-  chaseDistance: 5
-  moveSpeed: 2
-  attackInterval: 3
+  chaseDistance: 12
+  moveSpeed: 16
+  attackInterval: 1.2
   damageAmount: 1
   bossHealth: 5
   bubbleSpawnPoint: {fileID: 1592819246}
