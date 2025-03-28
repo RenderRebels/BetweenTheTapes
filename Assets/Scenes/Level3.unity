@@ -33004,7 +33004,7 @@ AudioLowPassFilter:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.12241928
+      value: 0.045020465
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -33253,9 +33253,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 9d1fe92e3e5f6494fb508b8af4accb1a, type: 3}
+  m_Resource: {fileID: 8300000, guid: 9d1fe92e3e5f6494fb508b8af4accb1a, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -33379,13 +33379,13 @@ AudioLowPassFilter:
   m_GameObject: {fileID: 992890746}
   m_Enabled: 1
   serializedVersion: 3
-  m_LowpassResonanceQ: 1.3
+  m_LowpassResonanceQ: 1
   lowpassLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.26084584
+      value: 0.22692133
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -90102,19 +90102,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_Size.x
-      value: 2.9894266
+      value: 5.757807
       objectReference: {fileID: 0}
     - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_Size.y
-      value: 4.1806817
+      value: 7.095912
       objectReference: {fileID: 0}
     - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_Offset.x
-      value: 0.054493666
+      value: 0.021692276
       objectReference: {fileID: 0}
     - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_Offset.y
-      value: -0.1413731
+      value: -0.74156666
       objectReference: {fileID: 0}
     - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

@@ -6,13 +6,13 @@ public class EnemyAI : MonoBehaviour
     public float moveSpeed = 2f;
 
     [Header("Detection Settings")]
-    public Transform player; // Reference to the player's transform
-    public float detectionRange = 5f; // Distance at which the enemy detects the player
+    public Transform player; 
+    public float detectionRange = 5f; 
 
     private Rigidbody2D rb;
     private Vector2 movement;
     private bool isPlayerInRange = false;
-    private bool movingLeft = true; // Determines the initial movement direction
+    private bool movingLeft = true; 
 
     void Start()
     {
@@ -41,7 +41,7 @@ public class EnemyAI : MonoBehaviour
 
     private void TrackPlayer()
     {
-        // Calculate direction towards player
+        
         Vector2 direction = (player.position - transform.position).normalized;
         movement = direction;
     }
@@ -61,10 +61,10 @@ public class EnemyAI : MonoBehaviour
     {
         foreach (ContactPoint2D contact in collision.contacts)
         {
-            // Check if the contact is on the left or right side of the enemy
+            
             if (Mathf.Abs(contact.normal.x) > 0.5f)
             {
-                movingLeft = !movingLeft; // Change direction when hitting a wall
+                movingLeft = !movingLeft; 
                 break;
             }
         }
@@ -72,7 +72,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) // Assumes player has a tag of "Player"
+        if (other.CompareTag("Player")) 
         {
             isPlayerInRange = true;
         }
