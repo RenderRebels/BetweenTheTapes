@@ -33262,29 +33262,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4647479013031666033, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
   m_PrefabInstance: {fileID: 7860740436400368922}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &919481464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919481463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee74fb40685c62349a642b04f8f4f6fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1010925638}
-  slamSpeed: 11
-  returnSpeed: 15
-  attackDelay: 0.8
-  slamStayDuration: 1
-  debrisPrefabs:
-  - {fileID: 4220662961073555237, guid: 48f76361d9c5b0349b31fb0f5b8c5f5d, type: 3}
-  - {fileID: 6603233843480556317, guid: 4ee2a2455a303e841a8fa24dfce6aa2f, type: 3}
-  - {fileID: 2744641777655103983, guid: 24c21c24a3a20c94e9013c99f0d9c032, type: 3}
-  debrisSpawnChance: 0.3
-  health: 5
 --- !u!4 &919481469 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2465592571053898624, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
@@ -33303,8 +33280,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  movement: {x: 0, y: 0}
+  isPlayerInRange: 0
 --- !u!70 &919481471
 CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919481463}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.3237876, y: -1.4084123}
+  m_Size: {x: 5.392889, y: 6.736824}
+  m_Direction: 0
+--- !u!60 &919481472
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -33337,9 +33353,49 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.2429056, y: 0.16790086}
-  m_Size: {x: 1.9927295, y: 3.5841985}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.6, y: 3.92}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5, y: -1.64}
+      - {x: 0.53999996, y: -1.76}
+      - {x: 0.7, y: -1.8399999}
+      - {x: 1.1, y: -1.36}
+      - {x: 1.3, y: -0.24}
+      - {x: 1.3, y: 0.56}
+      - {x: 0.94, y: 1.7199999}
+      - {x: 0.62, y: 1.9599999}
+      - {x: -0.06, y: 1.9599999}
+      - {x: -0.78, y: 1.24}
+      - {x: -1.3, y: -0.04}
+      - {x: -1.3, y: -0.76}
+      - {x: -1.1, y: -0.76}
+      - {x: -0.74, y: -0.48}
+      - {x: -0.53999996, y: 0.08}
+      - {x: -0.5, y: -0.96}
+      - {x: -0.06, y: -1.88}
+      - {x: 0.099999994, y: -1.9599999}
+      - {x: 0.38, y: -1.9599999}
+      - {x: 0.45999998, y: -1.88}
+      - {x: 0.5, y: -1.64}
+      - {x: 0.5, y: -1.24}
+    - - {x: 0.06, y: -0.88}
+      - {x: -0.06, y: -1}
+      - {x: 0.14, y: -1.5999999}
+      - {x: 0.22, y: -1.48}
+    - - {x: 0.82, y: 0.24}
+      - {x: 0.78, y: 0.12}
+      - {x: 0.82, y: -0.24}
+      - {x: 0.85999995, y: -0.24}
+  m_UseDelaunayMesh: 0
 --- !u!1 &932827005
 GameObject:
   m_ObjectHideFlags: 0
@@ -34126,6 +34182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1010925638}
+  rb: {fileID: 0}
   slamSpeed: 11
   returnSpeed: 15
   attackDelay: 0.8
@@ -34149,6 +34206,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  movement: {x: 0, y: 0}
+  isPlayerInRange: 0
 --- !u!1 &1122847059
 GameObject:
   m_ObjectHideFlags: 0
@@ -35154,6 +35213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  movement: {x: 0, y: 0}
+  isPlayerInRange: 0
 --- !u!1 &1513918884
 GameObject:
   m_ObjectHideFlags: 0
@@ -87593,6 +87654,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -1.4506192
       objectReference: {fileID: 0}
+    - target: {fileID: 3950884930756005570, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4536095366641107094, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_Constraints
       value: 7
@@ -87642,10 +87707,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2008503870}
     - target: {fileID: 8577141467666024769, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577141467666024769, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 140433255743585067, guid: 8d99210b395fe60489f1d1c074edc5e6, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5205310175680694113, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+    - {fileID: 3950884930756005570, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -87653,11 +87724,11 @@ PrefabInstance:
       insertIndex: 2
       addedObject: {fileID: 919481470}
     - targetCorrespondingSourceObject: {fileID: 4647479013031666033, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 919481464}
-    - targetCorrespondingSourceObject: {fileID: 4647479013031666033, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 919481471}
+    - targetCorrespondingSourceObject: {fileID: 4647479013031666033, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 919481472}
   m_SourcePrefab: {fileID: 100100000, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
