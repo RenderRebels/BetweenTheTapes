@@ -10,12 +10,14 @@ public class BossOne : MonoBehaviour
     public float chaseDistance = 5.0f;
     public float moveSpeed = 2.0f;
     public float attackInterval = 3f;
-    public int damageAmount = 10;
+    public int damageAmount = 1;
     public int bossHealth = 5; // Boss starts with 5 HP
     private bool isEnraged = false; // Enraged state
 
     private Vector3 targetPoint;
     private float attackTimer;
+
+    public Transform bubbleSpawnPoint;  // New field for the bubble spawn position
 
     void Start()
     {
@@ -78,7 +80,7 @@ public class BossOne : MonoBehaviour
 
     private IEnumerator BubbleProjectileAttack()
     {
-        GameObject bubble = Instantiate(bubbleProjectilePrefab, transform.position, Quaternion.identity);
+        GameObject bubble = Instantiate(bubbleProjectilePrefab, bubbleSpawnPoint.position, Quaternion.identity);  // Use bubbleSpawnPoint.position
         Rigidbody bubbleRb = bubble.GetComponent<Rigidbody>();
 
         if (bubbleRb != null)
