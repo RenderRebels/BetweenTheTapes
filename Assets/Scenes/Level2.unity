@@ -2949,6 +2949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: angry slime (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3440628414896217874, guid: 2a04a34e2299ede44aea02c1e9e2dbd0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3839975409065247042, guid: 2a04a34e2299ede44aea02c1e9e2dbd0, type: 3}
       propertyPath: player
       value: 
@@ -4359,6 +4363,8 @@ MonoBehaviour:
   damageAmount: 1
   bossHealth: 5
   bubbleSpawnPoint: {fileID: 1592819246}
+  minY: 0
+  maxY: 5
 --- !u!61 &1621659666
 BoxCollider2D:
   m_ObjectHideFlags: 0
