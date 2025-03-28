@@ -64,6 +64,7 @@ public class BossOne : MonoBehaviour
 
         if (attackTimer >= attackInterval)
         {
+            // When enraged, spawn 3 bubbles in one attack cycle
             if (isEnraged)
             {
                 StartCoroutine(BubbleProjectileAttack());
@@ -80,6 +81,7 @@ public class BossOne : MonoBehaviour
 
     private IEnumerator BubbleProjectileAttack()
     {
+        // Instantiate a new bubble at the spawn point
         GameObject bubble = Instantiate(bubbleProjectilePrefab, bubbleSpawnPoint.position, Quaternion.identity);
 
         // Set the player reference on the bubble to track the player
@@ -115,7 +117,7 @@ public class BossOne : MonoBehaviour
         if (other.CompareTag("Bubble"))
         {
             TakeDamage(1);
-            Destroy(other.gameObject);
+            Destroy(other.gameObject); // Destroy bubble on contact
         }
     }
 }

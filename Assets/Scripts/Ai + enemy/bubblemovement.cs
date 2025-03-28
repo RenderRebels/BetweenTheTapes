@@ -22,6 +22,17 @@ public class BubbleProjectile : MonoBehaviour
             bubbleRb.useGravity = false;
         }
 
+        // Find the player by tag
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            player = playerObject.transform;
+        }
+        else
+        {
+            Debug.LogWarning("Player with 'Player' tag not found!");
+        }
+
         // Start the tracking coroutine
         StartCoroutine(TrackPlayer());
     }
@@ -30,7 +41,7 @@ public class BubbleProjectile : MonoBehaviour
     {
         float timer = 0f;
 
-        while (timer < lifetime)
+        while (timer < lifetime && player != null)
         {
             timer += Time.deltaTime;
 
@@ -40,8 +51,11 @@ public class BubbleProjectile : MonoBehaviour
             // Apply floating effect and move towards the player
             Vector3 floatyDirection = direction + Vector3.up * floatStrength;
 
-            // Use linearVelocity to set the speed and direction
-            bubbleRb.linearVelocity = Vector3.Lerp(bubbleRb.linearVelocity, floatyDirection * initialSpeed, trackingSpeed * Time.deltaTime);
+            // Calculate the desired velocity (tracking + float effect)
+            Vector3 desiredVelocity = floatyDirection * initialSpeed;
+
+            // Smoothly transition to the new velocity
+            bubbleRb.linearVelocity = Vector3.Lerp(bubbleRb.linearVelocity, desiredVelocity, trackingSpeed * Time.deltaTime);
 
             // Add a wave-like force for extra effect
             float wave = Mathf.Sin(Time.time * 2f) * 0.3f;
