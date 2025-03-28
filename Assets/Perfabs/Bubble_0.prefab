@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 148.7036, y: 6.060355, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  initialSpeed: 8
-  floatStrength: 0.7
-  trackingSpeed: 3
+  initialSpeed: 15
+  floatStrength: 0.6
+  trackingSpeed: 5
   lifetime: 5
   damageAmount: 1
 --- !u!212 &2531494769724472734

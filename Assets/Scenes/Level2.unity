@@ -3618,7 +3618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4022049277410912632, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: speed
-      value: 35
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4022049277410912632, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: pointA
@@ -3965,11 +3965,11 @@ Transform:
   m_GameObject: {fileID: 1592819245}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 161.69229, y: 24.15, z: 0}
-  m_LocalScale: {x: 3.8634198, y: 3.8634198, z: 0.48292747}
+  m_LocalPosition: {x: -0.08999851, y: 4.850625, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1621659664}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1594454240
 GameObject:
@@ -4280,7 +4280,8 @@ Transform:
   m_LocalPosition: {x: 162.04, y: 5.41, z: 0}
   m_LocalScale: {x: 3.8634198, y: 3.8634198, z: 0.48292747}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1592819246}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1621659665
@@ -4300,8 +4301,8 @@ MonoBehaviour:
   pointB: {fileID: 129451928}
   bubbleProjectilePrefab: {fileID: 2573641704496301427, guid: 64ec8e5fa9bd2cb4abb09a77dc105967, type: 3}
   levelEndTrigger: {fileID: 1354024083}
-  chaseDistance: 10
-  moveSpeed: 18
+  chaseDistance: 8
+  moveSpeed: 9
   attackInterval: 0.8
   damageAmount: 1
   bossHealth: 3
@@ -5982,7 +5983,6 @@ SceneRoots:
   - {fileID: 330552586}
   - {fileID: 494039215}
   - {fileID: 1553807523}
-  - {fileID: 1592819246}
   - {fileID: 1621659664}
   - {fileID: 1929673406}
   - {fileID: 129451928}
