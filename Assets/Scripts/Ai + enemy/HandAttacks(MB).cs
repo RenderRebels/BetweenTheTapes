@@ -7,6 +7,7 @@ public class HandBoss : MonoBehaviour
     public float slamSpeed = 15f;
     public float returnSpeed = 5f;
     public float attackDelay = 2f;
+    public float slamStayDuration = 1f;
     public GameObject[] debrisPrefabs;
     public float debrisSpawnChance = 0.3f;
     public int health = 5;
@@ -53,16 +54,20 @@ public class HandBoss : MonoBehaviour
     {
         isAttacking = true;
         Vector3 slamPosition = new Vector3(target.position.x, target.position.y - 2f, target.position.z);
+
         while (Vector3.Distance(transform.position, slamPosition) > 0.1f)
         {
             transform.position = Vector3.MoveTowards(transform.position, slamPosition, slamSpeed * Time.deltaTime);
             yield return null;
         }
+
+        yield return new WaitForSeconds(slamStayDuration);
         DamagePlayer();
         if (Random.value < debrisSpawnChance)
         {
             SpawnRandomDebris();
         }
+
         isAttacking = false;
     }
 
