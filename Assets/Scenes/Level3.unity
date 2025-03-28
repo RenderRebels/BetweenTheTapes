@@ -16210,7 +16210,6 @@ GameObject:
   m_Component:
   - component: {fileID: 356393746}
   - component: {fileID: 356393749}
-  - component: {fileID: 356393748}
   - component: {fileID: 356393747}
   m_Layer: 0
   m_Name: Camera
@@ -16266,14 +16265,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!81 &356393748
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356393745}
-  m_Enabled: 1
 --- !u!20 &356393749
 Camera:
   m_ObjectHideFlags: 0
