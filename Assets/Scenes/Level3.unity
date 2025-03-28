@@ -32698,6 +32698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: angry slime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3440628414896217874, guid: 2a04a34e2299ede44aea02c1e9e2dbd0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3839975409065247042, guid: 2a04a34e2299ede44aea02c1e9e2dbd0, type: 3}
       propertyPath: player
       value: 
@@ -90100,6 +90104,10 @@ PrefabInstance:
     - target: {fileID: 4647479013031666033, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_Name
       value: Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647479013031666033, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6146201490130006489, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: m_Size.x
