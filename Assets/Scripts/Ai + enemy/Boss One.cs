@@ -51,7 +51,8 @@ public class BossOne : MonoBehaviour
 
     void Patrol()
     {
-        transform.position = Vector3.Lerp(transform.position, targetPoint, 0.05f); // Smooth patrol
+        // Move towards the target points using MoveTowards for fixed speed
+        transform.position = Vector3.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, pointA.position) < 0.1f)
         {
