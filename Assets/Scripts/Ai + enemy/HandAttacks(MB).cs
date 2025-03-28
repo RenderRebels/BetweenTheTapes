@@ -4,7 +4,6 @@ using System.Collections;
 public class HandBoss : MonoBehaviour
 {
     public Transform target;
-    public float swoopSpeed = 10f;
     public float slamSpeed = 15f;
     public float returnSpeed = 5f;
     public float attackDelay = 2f;
@@ -13,7 +12,6 @@ public class HandBoss : MonoBehaviour
     public int health = 5;
     private Vector3 startPosition;
     private bool isAttacking = false;
-    private bool enraged = false;
     private bool playerInRange = false;
 
     private void Start()
@@ -45,30 +43,10 @@ public class HandBoss : MonoBehaviour
             yield return new WaitForSeconds(attackDelay);
             if (playerInRange && !isAttacking)
             {
-                if (Random.value > 0.5f)
-                {
-                    yield return StartCoroutine(SwoopDown());
-                }
-                else
-                {
-                    yield return StartCoroutine(SlamDown());
-                }
+                yield return StartCoroutine(SlamDown());
                 yield return StartCoroutine(ReturnToStart());
             }
         }
-    }
-
-    private IEnumerator SwoopDown()
-    {
-        isAttacking = true;
-        Vector3 swoopTarget = target.position;
-        while (Vector3.Distance(transform.position, swoopTarget) > 0.1f)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, swoopTarget, swoopSpeed * Time.deltaTime);
-            yield return null;
-        }
-        DamagePlayer();
-        isAttacking = false;
     }
 
     private IEnumerator SlamDown()
@@ -126,25 +104,10 @@ public class HandBoss : MonoBehaviour
     {
         health -= damage;
         Debug.Log("Boss Health: " + health);
-        if (health <= 2 && !enraged)
-        {
-            Enrage();
-        }
         if (health <= 0)
         {
             Die();
         }
-    }
-
-    private void Enrage()
-    {
-        enraged = true;
-        swoopSpeed *= 1.5f;
-        slamSpeed *= 1.5f;
-        returnSpeed *= 1.5f;
-        attackDelay *= 0.7f;
-        debrisSpawnChance = 0.6f;
-        Debug.Log("Hand Boss is enraged! It moves faster and attacks more aggressively.");
     }
 
     private void Die()
