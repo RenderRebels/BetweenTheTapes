@@ -18,13 +18,20 @@ public class BossOne : MonoBehaviour
     private float attackTimer;
 
     public Transform bubbleSpawnPoint;  // Bubble spawn point
-
     public float minY = 0f;  // Minimum Y position
     public float maxY = 5f;  // Maximum Y position
+
+    public GameObject levelEndTrigger; // Reference to the level end trigger GameObject
 
     void Start()
     {
         targetPoint = pointB.position;
+
+        // Initially disable the level end trigger
+        if (levelEndTrigger != null)
+        {
+            levelEndTrigger.SetActive(false);
+        }
     }
 
     void Update()
@@ -44,7 +51,7 @@ public class BossOne : MonoBehaviour
 
     void Patrol()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, targetPoint, 0.05f); // Smooth patrol
 
         if (Vector3.Distance(transform.position, pointA.position) < 0.1f)
         {
@@ -58,14 +65,9 @@ public class BossOne : MonoBehaviour
 
     void ChasePlayer()
     {
-        // Calculate the target position for chasing the player
         Vector3 targetPosition = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-
-        // Clamp the Y position to prevent the boss from going too high
-        targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY); // Clamp Y position between minY and maxY
-
-        // Update the boss's position
-        transform.position = targetPosition;
+        targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.1f); // Smooth chase
     }
 
     void HandleAttacks()
@@ -74,7 +76,6 @@ public class BossOne : MonoBehaviour
 
         if (attackTimer >= attackInterval)
         {
-            // When enraged, spawn 3 bubbles in one attack cycle
             if (isEnraged)
             {
                 StartCoroutine(BubbleProjectileAttack());
@@ -91,14 +92,11 @@ public class BossOne : MonoBehaviour
 
     private IEnumerator BubbleProjectileAttack()
     {
-        // Instantiate a new bubble at the spawn point
         GameObject bubble = Instantiate(bubbleProjectilePrefab, bubbleSpawnPoint.position, Quaternion.identity);
-
-        // Set the player reference on the bubble to track the player
         BubbleProjectile bubbleScript = bubble.GetComponent<BubbleProjectile>();
         if (bubbleScript != null)
         {
-            bubbleScript.player = player;  // Pass the player reference to the bubble
+            bubbleScript.player = player;
         }
 
         yield return null;
@@ -119,6 +117,12 @@ public class BossOne : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("Boss defeated!");
+
+            // Enable the level end trigger after boss defeat
+            if (levelEndTrigger != null)
+            {
+                levelEndTrigger.SetActive(true);
+            }
         }
     }
 
