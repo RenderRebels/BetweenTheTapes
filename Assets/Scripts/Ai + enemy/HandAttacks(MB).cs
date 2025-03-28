@@ -4,6 +4,7 @@ using System.Collections;
 public class HandBoss : MonoBehaviour
 {
     public Transform target;
+    public Rigidbody2D rb;
     public float slamSpeed = 15f;
     public float returnSpeed = 5f;
     public float attackDelay = 2f;
@@ -14,17 +15,37 @@ public class HandBoss : MonoBehaviour
     private Vector3 startPosition;
     private bool isAttacking = false;
     private bool playerInRange = false;
+    private bool isPlayerInRange = false;
 
     private void Start()
     {
         startPosition = transform.position;
+        rb = GetComponent<Rigidbody2D>();
         StartCoroutine(AttackLoop());
+    }
+
+    private void Update()
+    {
+        if (isPlayerInRange)
+        {
+            TrackPlayer();
+        }
+    }
+
+    private void TrackPlayer()
+    {
+        if (target != null)
+        {
+            Vector2 direction = (target.position - transform.position).normalized;
+            rb.velocity = direction * slamSpeed;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
+            isPlayerInRange = true;
             playerInRange = true;
         }
     }
@@ -33,6 +54,7 @@ public class HandBoss : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            isPlayerInRange = false;
             playerInRange = false;
         }
     }
