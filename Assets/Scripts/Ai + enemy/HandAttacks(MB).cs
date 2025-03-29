@@ -14,12 +14,14 @@ public class HandBoss : MonoBehaviour
     public float debrisSpawnChance = 0.3f;
     public int health = 5;
 
+    public GameObject levelEndTrigger; // Reference to the level end trigger
+
     private Vector3 startPosition;
     private bool isAttacking = false;
     private bool playerInRange = false;
     private bool isPlayerInRange = false;
 
-    private float currentAnimValue = 0f; 
+    private float currentAnimValue = 0f;
 
     private void Start()
     {
@@ -27,6 +29,11 @@ public class HandBoss : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         StartCoroutine(AttackLoop());
+
+        if (levelEndTrigger != null)
+        {
+            levelEndTrigger.SetActive(false); // Ensure it's initially disabled
+        }
     }
 
     private void Update()
@@ -71,13 +78,13 @@ public class HandBoss : MonoBehaviour
             yield return new WaitForSeconds(attackDelay);
             if (playerInRange && !isAttacking)
             {
-                SetAnimation(1f); 
-                yield return new WaitForSeconds(1f); 
+                SetAnimation(1f);
+                yield return new WaitForSeconds(1f);
 
                 yield return StartCoroutine(SlamDown());
                 yield return StartCoroutine(ReturnToStart());
 
-                SetAnimation(0f); 
+                SetAnimation(0f);
             }
         }
     }
@@ -86,7 +93,7 @@ public class HandBoss : MonoBehaviour
     {
         isAttacking = true;
 
-        SetAnimation(-1f); 
+        SetAnimation(-1f);
         Vector3 slamPosition = new Vector3(target.position.x, target.position.y - 2f, target.position.z);
 
         while (Vector3.Distance(transform.position, slamPosition) > 0.1f)
@@ -162,6 +169,12 @@ public class HandBoss : MonoBehaviour
     private void Die()
     {
         Debug.Log("Hand Boss Defeated!");
+
+        if (levelEndTrigger != null)
+        {
+            levelEndTrigger.SetActive(true); // Enable the level end trigger
+        }
+
         Destroy(gameObject);
     }
 }

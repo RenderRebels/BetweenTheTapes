@@ -16610,9 +16610,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelEndTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 1272092926170340067, guid: 74332fababb33c541b27a5021de315c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747291238989620582, guid: 74332fababb33c541b27a5021de315c9, type: 3}
+      propertyPath: m_Size.x
+      value: 42.564293
+      objectReference: {fileID: 0}
     - target: {fileID: 3747291238989620582, guid: 74332fababb33c541b27a5021de315c9, type: 3}
       propertyPath: m_Size.y
       value: 36.95978
+      objectReference: {fileID: 0}
+    - target: {fileID: 3747291238989620582, guid: 74332fababb33c541b27a5021de315c9, type: 3}
+      propertyPath: m_Offset.x
+      value: 33.005054
       objectReference: {fileID: 0}
     - target: {fileID: 3747291238989620582, guid: 74332fababb33c541b27a5021de315c9, type: 3}
       propertyPath: m_Offset.y
@@ -34169,6 +34181,7 @@ MonoBehaviour:
   - {fileID: 2744641777655103983, guid: 24c21c24a3a20c94e9013c99f0d9c032, type: 3}
   debrisSpawnChance: 0.3
   health: 5
+  levelEndTrigger: {fileID: 0}
 --- !u!70 &1114550226
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -35652,6 +35665,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 835955026440901884, guid: de60f581a5fea7d408751d78d6791298, type: 3}
+      propertyPath: m_text
+      value: You Win!
+      objectReference: {fileID: 0}
     - target: {fileID: 2377638484518774277, guid: de60f581a5fea7d408751d78d6791298, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -35671,6 +35688,10 @@ PrefabInstance:
     - target: {fileID: 5862816350493250916, guid: de60f581a5fea7d408751d78d6791298, type: 3}
       propertyPath: m_Name
       value: LevelComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862816350493250916, guid: de60f581a5fea7d408751d78d6791298, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7476413639040027730, guid: de60f581a5fea7d408751d78d6791298, type: 3}
       propertyPath: m_Pivot.x
@@ -35753,7 +35774,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8338474031199361675, guid: de60f581a5fea7d408751d78d6791298, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de60f581a5fea7d408751d78d6791298, type: 3}
