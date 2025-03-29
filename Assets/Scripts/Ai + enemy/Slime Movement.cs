@@ -7,19 +7,30 @@ public class SlimeMovement : MonoBehaviour
     public Transform pointB;
     public float chaseDistance = 5.0f;
     public float moveSpeed = 2.0f;
-    public AudioSource chaseSound; // Reference to the AudioSource
+    public AudioSource chaseSound;
 
     private Vector3 targetPoint;
     private bool isChasing = false;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         targetPoint = pointB.position;
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (player.position.x > transform.position.x)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+        }
 
         if (distanceToPlayer < chaseDistance)
         {
