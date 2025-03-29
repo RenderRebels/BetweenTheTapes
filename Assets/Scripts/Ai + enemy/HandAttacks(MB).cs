@@ -5,6 +5,7 @@ public class HandBoss : MonoBehaviour
 {
     public Transform target;
     public Rigidbody2D rb;
+    public Animator animator;
     public float slamSpeed = 15f;
     public float returnSpeed = 5f;
     public float attackDelay = 2f;
@@ -12,15 +13,19 @@ public class HandBoss : MonoBehaviour
     public GameObject[] debrisPrefabs;
     public float debrisSpawnChance = 0.3f;
     public int health = 5;
+
     private Vector3 startPosition;
     private bool isAttacking = false;
     private bool playerInRange = false;
     private bool isPlayerInRange = false;
 
+    private float currentAnimValue = 0f; 
+
     private void Start()
     {
         startPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         StartCoroutine(AttackLoop());
     }
 
@@ -66,8 +71,13 @@ public class HandBoss : MonoBehaviour
             yield return new WaitForSeconds(attackDelay);
             if (playerInRange && !isAttacking)
             {
+                SetAnimation(1f); 
+                yield return new WaitForSeconds(1f); 
+
                 yield return StartCoroutine(SlamDown());
                 yield return StartCoroutine(ReturnToStart());
+
+                SetAnimation(0f); 
             }
         }
     }
@@ -75,6 +85,8 @@ public class HandBoss : MonoBehaviour
     private IEnumerator SlamDown()
     {
         isAttacking = true;
+
+        SetAnimation(-1f); 
         Vector3 slamPosition = new Vector3(target.position.x, target.position.y - 2f, target.position.z);
 
         while (Vector3.Distance(transform.position, slamPosition) > 0.1f)
@@ -85,12 +97,22 @@ public class HandBoss : MonoBehaviour
 
         yield return new WaitForSeconds(slamStayDuration);
         DamagePlayer();
+
         if (Random.value < debrisSpawnChance)
         {
             SpawnRandomDebris();
         }
 
         isAttacking = false;
+    }
+
+    private IEnumerator ReturnToStart()
+    {
+        while (Vector3.Distance(transform.position, startPosition) > 0.1f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, startPosition, returnSpeed * Time.deltaTime);
+            yield return null;
+        }
     }
 
     private void DamagePlayer()
@@ -118,12 +140,12 @@ public class HandBoss : MonoBehaviour
         }
     }
 
-    private IEnumerator ReturnToStart()
+    private void SetAnimation(float value)
     {
-        while (Vector3.Distance(transform.position, startPosition) > 0.1f)
+        if (animator != null && currentAnimValue != value)
         {
-            transform.position = Vector3.MoveTowards(transform.position, startPosition, returnSpeed * Time.deltaTime);
-            yield return null;
+            animator.SetFloat("HandV", value);
+            currentAnimValue = value;
         }
     }
 
