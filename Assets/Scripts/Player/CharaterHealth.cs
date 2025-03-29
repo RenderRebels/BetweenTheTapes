@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI; // Required for UI elements
+using UnityEngine.UI;
 
 public class CharacterHealth : MonoBehaviour
 {
@@ -9,15 +9,16 @@ public class CharacterHealth : MonoBehaviour
     const int damage = 1;
     int currentHealth = maxHealth;
 
-    public Image healthHUD; // UI Image that displays the health
-    public Sprite[] healthSprites; // Array of sprites for different health levels
-
-    public AudioSource audioSource; // Audio source to play sounds
-    public AudioClip damageSound; // Sound effect for taking damage
-    public AudioClip deathSound; // Sound effect for reaching 0 health
+    public Image healthHUD;
+    public Sprite[] healthSprites;
+    public AudioSource audioSource;
+    public AudioClip damageSound;
+    public AudioClip deathSound;
+    private Animator animator; // Animator reference
 
     void Start()
     {
+        animator = GetComponent<Animator>(); // Get the Animator component
         UpdateHealthHUD();
     }
 
@@ -25,21 +26,35 @@ public class CharacterHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            currentHealth -= damage;
-            currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
-            Debug.Log("Health: " + currentHealth);
-            UpdateHealthHUD();
-
-            if (currentHealth <= minHealth)
-            {
-                PlayDeathSound();
-                Invoke("RestartScene", 1f); // Delay restart for dramatic effect
-            }
-            else
-            {
-                PlayDamageSound();
-            }
+            TakeDamage(damage);
         }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
+        Debug.Log("Health: " + currentHealth);
+        UpdateHealthHUD();
+
+        if (currentHealth <= minHealth)
+        {
+            PlayDeath();
+        }
+        else
+        {
+            PlayDamageSound();
+        }
+    }
+
+    void PlayDeath()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Death"); // Trigger the Death animation
+        }
+        PlayDeathSound();
+        Invoke("RestartScene", 2f); // Give time for animation to play
     }
 
     void RestartScene()
@@ -71,22 +86,4 @@ public class CharacterHealth : MonoBehaviour
             audioSource.PlayOneShot(deathSound);
         }
     }
-    public void TakeDamage(int amount)
-    {
-        currentHealth -= amount;
-        currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
-        Debug.Log("Health: " + currentHealth);
-        UpdateHealthHUD();
-
-        if (currentHealth <= minHealth)
-        {
-            PlayDeathSound();
-            Invoke("RestartScene", 1f);
-        }
-        else
-        {
-            PlayDamageSound();
-        }
-    }
-
 }
