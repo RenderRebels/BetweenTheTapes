@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections; // Required for coroutines
 
 public class CharacterHealth : MonoBehaviour
 {
@@ -55,12 +54,11 @@ public class CharacterHealth : MonoBehaviour
             animator.SetTrigger("Death"); // Trigger the Death animation
         }
         PlayDeathSound();
-        StartCoroutine(RestartSceneCoroutine()); // Use coroutine for delay
+        RestartScene(); // Instantly restart the scene
     }
 
-    IEnumerator RestartSceneCoroutine()
+    void RestartScene()
     {
-        yield return new WaitForSeconds(1f); // Wait for 1 second
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
