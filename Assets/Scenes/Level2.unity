@@ -3618,7 +3618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4022049277410912632, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: speed
-      value: 45
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4022049277410912632, guid: 01ec216f1153f3049be0d12f22c1fd40, type: 3}
       propertyPath: pointA
@@ -3730,7 +3730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -525.93134, y: 282.6655}
+  m_AnchoredPosition: {x: -845, y: 499}
   m_SizeDelta: {x: 228.1373, y: 77.469}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1544656923
@@ -3965,7 +3965,7 @@ Transform:
   m_GameObject: {fileID: 1592819245}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.08999851, y: 4.850625, z: 0}
+  m_LocalPosition: {x: -0.073, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4277,7 +4277,7 @@ Transform:
   m_GameObject: {fileID: 1621659662}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 162.04, y: 5.41, z: 0}
+  m_LocalPosition: {x: 162.04, y: 8, z: 0}
   m_LocalScale: {x: 3.8634198, y: 3.8634198, z: 0.48292747}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4305,10 +4305,10 @@ MonoBehaviour:
   moveSpeed: 9
   attackInterval: 0.8
   damageAmount: 1
-  bossHealth: 3
-  enrageHealth: 2
+  bossHealth: 10
+  enrageHealth: 4
   bubbleSpawnPoint: {fileID: 1592819246}
-  minY: 6.5
+  minY: 6
   maxY: 8
 --- !u!61 &1621659666
 BoxCollider2D:
