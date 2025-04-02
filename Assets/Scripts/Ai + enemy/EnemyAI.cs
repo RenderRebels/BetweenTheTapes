@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     private bool isPlayerInRange = false;
-    private bool movingLeft = true; 
+    private bool movingLeft = true;
 
     void Start()
     {
@@ -41,28 +41,26 @@ public class EnemyAI : MonoBehaviour
 
     private void TrackPlayer()
     {
-        
         Vector2 direction = (player.position - transform.position).normalized;
         movement = direction;
     }
 
     private void MoveTowardsPlayer()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.velocity = new Vector2(movement.x * moveSpeed, rb.velocity.y);
     }
 
     private void Patrol()
     {
-        Vector2 patrolDirection = movingLeft ? Vector2.left : Vector2.right;
-        rb.MovePosition(rb.position + patrolDirection * moveSpeed * Time.fixedDeltaTime);
+        float moveDirection = movingLeft ? -1f : 1f;
+        rb.velocity = new Vector2(moveSpeed * moveDirection, rb.velocity.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         foreach (ContactPoint2D contact in collision.contacts)
         {
-            
-            if (Mathf.Abs(contact.normal.x) > 0.5f)
+            if (Mathf.Abs(contact.normal.x) > 0.5f) // Hit a wall
             {
                 movingLeft = !movingLeft; 
                 break;
