@@ -107,8 +107,8 @@ TextureImporter:
         y: 15
         width: 40
         height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -121,11 +121,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: IMG_8099_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 15
+        width: 40
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6d17d3fc3e7fd4ba59f9db294dd28e
+      internalID: 1102928564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3111e0c907125aa4f9962d303eb3abee
     internalID: 0
     vertices: []
     indices: 
@@ -136,6 +158,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       IMG_8099_0: -6538476202486613930
+      IMG_8099_1: 1102928564
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
