@@ -14,11 +14,11 @@ public class CharacterHealth : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip damageSound;
     public AudioClip deathSound;
-    private Animator animator; // Animator reference
+    private Animator animator;
 
     void Start()
     {
-        animator = GetComponent<Animator>(); // Get the Animator component
+        animator = GetComponent<Animator>();
         UpdateHealthHUD();
     }
 
