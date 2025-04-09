@@ -28,6 +28,11 @@ public class CharacterHealth : MonoBehaviour
         {
             TakeDamage(damage);
         }
+
+        if (collision.gameObject.CompareTag("Spike"))
+        {
+            TakeDamage(damage);
+        }
     }
 
     public void TakeDamage(int amount)
