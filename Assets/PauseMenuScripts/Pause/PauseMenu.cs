@@ -5,7 +5,6 @@ public class PauseMenuManager : MonoBehaviour
 {
     [SerializeField] public GameObject pauseMenu;
     [SerializeField] public GameObject optionsMenu;
-    [SerializeField] public GameObject pauseMenuImage;
     public bool isPaused = false;
 
     void Update()
@@ -27,14 +26,12 @@ public class PauseMenuManager : MonoBehaviour
     {
         isPaused = !isPaused;
         pauseMenu.SetActive(isPaused);
-        pauseMenuImage.SetActive(isPaused); // Show or hide the PNG image
         Time.timeScale = isPaused ? 0 : 1;
     }
 
     public void OpenOptions()
     {
         pauseMenu.SetActive(false);
-        pauseMenuImage.SetActive(false); // Hide the PNG image when options are open
         optionsMenu.SetActive(true);
     }
 
@@ -42,14 +39,12 @@ public class PauseMenuManager : MonoBehaviour
     {
         optionsMenu.SetActive(false);
         pauseMenu.SetActive(true);
-        pauseMenuImage.SetActive(true); // Show the PNG image when returning to the pause menu
     }
 
     public void ResumeGame()
     {
         isPaused = false;
         pauseMenu.SetActive(false);
-        pauseMenuImage.SetActive(false); // Hide the PNG image when resuming
         Time.timeScale = 1;
     }
 
