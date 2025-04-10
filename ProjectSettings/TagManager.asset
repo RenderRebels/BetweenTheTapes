@@ -11,6 +11,7 @@ TagManager:
   - RHand
   - LHand
   - Bubble
+  - Spike
   layers:
   - Default
   - TransparentFX
