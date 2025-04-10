@@ -29,10 +29,11 @@ public class WorldSwitcher : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.LeftShift) || Input.GetMouseButtonDown(0))
         {
             SwitchWorld();
         }
+
     }
 
     void SwitchWorld()
