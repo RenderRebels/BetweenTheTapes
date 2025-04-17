@@ -16775,12 +16775,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3940742237994713183, guid: 74332fababb33c541b27a5021de315c9, type: 3}
   m_PrefabInstance: {fileID: 389863008}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 389863010}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d25aaa7172e6f454f9453a6892f97478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &389863010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1272092926170340067, guid: 74332fababb33c541b27a5021de315c9, type: 3}
+  m_PrefabInstance: {fileID: 389863008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &419089392
 GameObject:
   m_ObjectHideFlags: 0
@@ -88714,9 +88719,25 @@ PrefabInstance:
       value: 3.92
       objectReference: {fileID: 0}
     - target: {fileID: 6385605045866811342, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385605045866811342, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1010925638}
+    - target: {fileID: 6385605045866811342, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: attackDelay
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6385605045866811342, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: levelEndTrigger
+      value: 
+      objectReference: {fileID: 389863010}
+    - target: {fileID: 6385605045866811342, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
+      propertyPath: debrisSpawnChance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6660650837900688718, guid: 271fa143ee11d8640a21d6c73a7a617d, type: 3}
       propertyPath: player
       value: 
