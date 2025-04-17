@@ -47,7 +47,6 @@ public class PatrollingFish : MonoBehaviour
     void AttackPlayer()
     {
         Debug.Log("Fish attacks the player!");
-        // Add actual attack logic here (e.g., reduce health, play animation, etc.)
     }
 
     private void OnTriggerEnter2D(Collider2D other)
