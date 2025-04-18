@@ -55,7 +55,12 @@ public class BossOne : MonoBehaviour
     void Patrol()
     {
         // Move the boss smoothly between pointA and pointB
-        transform.position = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+        Vector2 newPosition = Vector2.MoveTowards(transform.position, targetPoint, moveSpeed * Time.deltaTime);
+
+        // Clamp the X position to be between 140 and 186
+        newPosition.x = Mathf.Clamp(newPosition.x, 140f, 186f);
+
+        transform.position = newPosition;
 
         // If close to a patrol point, switch target
         if (Vector2.Distance(transform.position, targetPoint) < 0.1f)
@@ -69,8 +74,9 @@ public class BossOne : MonoBehaviour
         // Move towards the player
         Vector2 targetPosition = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
-        // Clamp Y position to prevent excessive vertical movement
+        // Clamp Y and X positions to keep boss within bounds
         targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
+        targetPosition.x = Mathf.Clamp(targetPosition.x, 140f, 186f);
 
         transform.position = targetPosition;
     }
